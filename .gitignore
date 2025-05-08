@@ -53,6 +53,7 @@ dkms.conf
 
 # CubeIDE files
 .project
+NucleoF103/.settings/
 
 # KiCAD temporary files
 *.000
