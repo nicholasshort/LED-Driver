@@ -52,8 +52,10 @@ Mkfile.old
 dkms.conf
 
 # CubeIDE files
+*.cproject
+*.mxproject
+.settings/
 .project
-NucleoF103/.settings/
 
 # KiCAD temporary files
 *.000
