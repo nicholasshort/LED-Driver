@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "LED-Driver_SymbolLib")(type "KiCad")(uri "${KIPRJMOD}/LED-Driver_SymbolLib.kicad_sym")(options "")(descr ""))
+)
