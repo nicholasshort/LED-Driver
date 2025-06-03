@@ -3175,12 +3175,12 @@
 	(footprint "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
 		(layer "F.Cu")
 		(uuid "28448b4c-a7a9-4864-9d18-443b6a6a0731")
-		(at 144.5445 89.89345)
+		(at 80.96 127.385 90)
 		(descr "Tag-Connect programming header; http://www.tag-connect.com/Materials/TC2030-IDC.pdf")
 		(tags "tag connect programming header pogo pins")
 		(property "Reference" "J20"
-			(at 0 5 0)
-			(layer "F.SilkS")
+			(at 0 5 90)
+			(layer "F.Fab")
 			(uuid "cdb51066-208d-4d59-b4f9-09391bdb8e30")
 			(effects
 				(font
@@ -3190,7 +3190,7 @@
 			)
 		)
 		(property "Value" "Conn_ARM_SWD_TagConnect_TC2030"
-			(at 0 -4.7 0)
+			(at 0 -4.7 90)
 			(layer "F.Fab")
 			(uuid "aea2f66c-878f-4ff5-8af2-869c90f24b1e")
 			(effects
@@ -3201,7 +3201,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf"
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3214,7 +3214,7 @@
 			)
 		)
 		(property "Description" "Tag-Connect ARM Cortex SWD JTAG connector, 6 pin"
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3232,16 +3232,6 @@
 		(sheetfile "LED-DriverPCB.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_line
-			(start -1.905 1.27)
-			(end -1.905 0.635)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "5aa38145-929d-4a0e-bf73-c02ff110de5e")
-		)
-		(fp_line
 			(start -1.27 1.27)
 			(end -1.905 1.27)
 			(stroke
@@ -3252,24 +3242,14 @@
 			(uuid "872db75f-dcf9-4889-b4e8-a66fdca6613e")
 		)
 		(fp_line
-			(start -4.25 -4.25)
-			(end 3.75 -4.25)
+			(start -1.905 1.27)
+			(end -1.905 0.635)
 			(stroke
-				(width 0.05)
+				(width 0.12)
 				(type solid)
 			)
-			(layer "F.CrtYd")
-			(uuid "01cfc5ea-3c6b-41cf-9866-f7bbcd43bb97")
-		)
-		(fp_line
-			(start -4.25 4.25)
-			(end -4.25 -4.25)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "cb87670d-bc25-4d37-9dab-5b5f16299afc")
+			(layer "F.SilkS")
+			(uuid "5aa38145-929d-4a0e-bf73-c02ff110de5e")
 		)
 		(fp_line
 			(start 3.75 -4.25)
@@ -3282,6 +3262,16 @@
 			(uuid "90729d2e-002e-46ee-b8a8-68496f08fe17")
 		)
 		(fp_line
+			(start -4.25 -4.25)
+			(end 3.75 -4.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "01cfc5ea-3c6b-41cf-9866-f7bbcd43bb97")
+		)
+		(fp_line
 			(start 3.75 4.25)
 			(end -4.25 4.25)
 			(stroke
@@ -3291,8 +3281,18 @@
 			(layer "F.CrtYd")
 			(uuid "427df1a5-30e2-4b0e-922c-3ebdc8c4c510")
 		)
+		(fp_line
+			(start -4.25 4.25)
+			(end -4.25 -4.25)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "cb87670d-bc25-4d37-9dab-5b5f16299afc")
+		)
 		(fp_text user "KEEPOUT"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "Cmts.User")
 			(uuid "50b0b1d1-04ab-4d79-bebf-1219ffb3c60d")
 			(effects
@@ -3303,7 +3303,7 @@
 			)
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "ea579717-72af-44bf-9ff4-9f946439729f")
 			(effects
@@ -3314,56 +3314,56 @@
 			)
 		)
 		(pad "" np_thru_hole circle
-			(at -2.54 -2.54)
+			(at -2.54 -2.54 90)
 			(size 2.3749 2.3749)
 			(drill 2.3749)
 			(layers "*.Cu" "*.Mask")
 			(uuid "6bcbae32-fb12-450f-a298-a0f511752d86")
 		)
 		(pad "" np_thru_hole circle
-			(at -2.54 0)
+			(at -2.54 0 90)
 			(size 0.9906 0.9906)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
 			(uuid "81eea568-1a9b-42fa-9f32-a584c74e876d")
 		)
 		(pad "" np_thru_hole circle
-			(at -2.54 2.54)
+			(at -2.54 2.54 90)
 			(size 2.3749 2.3749)
 			(drill 2.3749)
 			(layers "*.Cu" "*.Mask")
 			(uuid "d9b4b32b-6143-4f64-b730-75d0bfa71ccb")
 		)
 		(pad "" np_thru_hole circle
-			(at 0.635 -2.54)
+			(at 0.635 -2.54 90)
 			(size 2.3749 2.3749)
 			(drill 2.3749)
 			(layers "*.Cu" "*.Mask")
 			(uuid "9da01eb9-c7e6-4850-b190-e556208438f2")
 		)
 		(pad "" np_thru_hole circle
-			(at 0.635 2.54)
+			(at 0.635 2.54 90)
 			(size 2.3749 2.3749)
 			(drill 2.3749)
 			(layers "*.Cu" "*.Mask")
 			(uuid "787ac261-5138-49ae-9fc9-ecf64925eb82")
 		)
 		(pad "" np_thru_hole circle
-			(at 2.54 -1.016)
+			(at 2.54 -1.016 90)
 			(size 0.9906 0.9906)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
 			(uuid "056e260e-2c55-47e4-854f-40361d121a2e")
 		)
 		(pad "" np_thru_hole circle
-			(at 2.54 1.016)
+			(at 2.54 1.016 90)
 			(size 0.9906 0.9906)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
 			(uuid "00e244e1-79ab-4032-bcf6-b9f0cdda6d37")
 		)
 		(pad "1" connect circle
-			(at -1.27 0.635)
+			(at -1.27 0.635 90)
 			(size 0.7874 0.7874)
 			(layers "F.Cu" "F.Mask")
 			(net 12 "+3.3V")
@@ -3372,7 +3372,7 @@
 			(uuid "32e1c2e7-5ce2-47de-b005-4a80c381d6cf")
 		)
 		(pad "2" connect circle
-			(at -1.27 -0.635)
+			(at -1.27 -0.635 90)
 			(size 0.7874 0.7874)
 			(layers "F.Cu" "F.Mask")
 			(net 14 "/SWD_DIO")
@@ -3381,7 +3381,7 @@
 			(uuid "7b044f97-19ce-4621-81bd-20097c235a2b")
 		)
 		(pad "3" connect circle
-			(at 0 0.635)
+			(at 0 0.635 90)
 			(size 0.7874 0.7874)
 			(layers "F.Cu" "F.Mask")
 			(net 10 "/SWD_NRST")
@@ -3390,7 +3390,7 @@
 			(uuid "1e66122f-2938-437f-838e-dfba347cc309")
 		)
 		(pad "4" connect circle
-			(at 0 -0.635)
+			(at 0 -0.635 90)
 			(size 0.7874 0.7874)
 			(layers "F.Cu" "F.Mask")
 			(net 13 "/SWD_CLK")
@@ -3399,7 +3399,7 @@
 			(uuid "3ad8f9a3-7d0f-498b-a101-518934679228")
 		)
 		(pad "5" connect circle
-			(at 1.27 0.635)
+			(at 1.27 0.635 90)
 			(size 0.7874 0.7874)
 			(layers "F.Cu" "F.Mask")
 			(net 1 "GND")
@@ -3408,7 +3408,7 @@
 			(uuid "8636286b-15d9-4b18-ae8c-80e3e6322c0c")
 		)
 		(pad "6" connect circle
-			(at 1.27 -0.635)
+			(at 1.27 -0.635 90)
 			(size 0.7874 0.7874)
 			(layers "F.Cu" "F.Mask")
 			(net 11 "/SWD_SWO")
@@ -3444,7 +3444,7 @@
 			)
 			(polygon
 				(pts
-					(xy 145.8145 89.25845) (xy 143.2745 89.25845) (xy 143.2745 90.52845) (xy 145.8145 90.52845)
+					(xy 80.325 126.115) (xy 80.325 128.655) (xy 81.595 128.655) (xy 81.595 126.115)
 				)
 			)
 		)
@@ -11451,7 +11451,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "e7786b8e-7c1e-4bf2-aaf9-5376eb6d7b8a")
-		(at 201.4806 66.751397)
+		(at 82.916599 67.0819)
 		(tags "39303037 ")
 		(property "Reference" "J1"
 			(at -4.199999 0 0)
