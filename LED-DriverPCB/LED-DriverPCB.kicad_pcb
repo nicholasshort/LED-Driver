@@ -6,7 +6,7 @@
 		(thickness 1.6)
 		(legacy_teardrops no)
 	)
-	(paper "A4")
+	(paper "A2")
 	(layers
 		(0 "F.Cu" signal)
 		(4 "In1.Cu" signal)
@@ -100,6 +100,7 @@
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting front back)
+		(grid_origin 120.5 86)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -224,7 +225,7 @@
 	(footprint "26013114:CONN_5569-02A_MOL"
 		(layer "F.Cu")
 		(uuid "0b2f0c98-5b38-4c7e-816e-8e83125fdb26")
-		(at 150.75 145)
+		(at 121.9666 376.88975)
 		(tags "26013114 ")
 		(property "Reference" "J16"
 			(at 0 -2.75 0)
@@ -499,7 +500,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "0bf01648-3307-403c-869a-909bfade1746")
-		(at 201.4806 84.167598)
+		(at 41 238.167598)
 		(tags "39303037 ")
 		(property "Reference" "J3"
 			(at -4.199999 0 0)
@@ -812,7 +813,7 @@
 	(footprint "Capacitor_SMD:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "0e68fcd6-e026-415b-a5dd-67da5e2e6d24")
-		(at 69.5 108.52 90)
+		(at 43.375 114.02 90)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C1"
@@ -1011,7 +1012,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "1b4ac0e4-c848-40a6-afed-a19e25974535")
-		(at 100 132.15 180)
+		(at 73.875 137.65 180)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R4"
@@ -1207,10 +1208,111 @@
 			)
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3"
+		(layer "F.Cu")
+		(uuid "1bcb2ce2-0ccf-4147-82b9-a85f0f33c320")
+		(at 120.5 200.3)
+		(descr "Mounting Hole 3.2mm, no annular, M3")
+		(tags "mounting hole 3.2mm no annular m3")
+		(property "Reference" "H5"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "033255d3-2553-4bae-aa5e-9c44edfa9892")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "1eac4894-a19b-4f58-a211-4019c90382d3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e0b11f47-99f0-4c60-81f8-ce1ebfed599a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c64835b6-61a3-4e71-9d8d-3bf48a8a3d78")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/5f21b087-952a-4871-81bc-dd15676d620a")
+		(sheetname "/")
+		(sheetfile "LED-DriverPCB.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "04a5049f-87fb-4550-861b-dca9399e97a4")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "f28ff1ed-dba9-4e60-9c32-63513586a998")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "163bd34c-fc52-44f8-9d32-ffb7775f652d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 3.2 3.2)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(uuid "f52fd174-0843-4ce7-bb88-bf22c7de0c4e")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "1d8b1aad-eef2-4c6c-8f71-2c25d0b98779")
-		(at 70 105.9 180)
+		(at 43.875 111.4 180)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C5"
@@ -1409,7 +1511,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "1fe6ca06-2c28-4a3d-a893-49a977528092")
-		(at 74.1 101.4)
+		(at 47.975 106.9)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C9"
@@ -1608,7 +1710,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "23b2f871-9888-47fc-bbd4-c9945516415e")
-		(at 92.75 115.7 90)
+		(at 66.625 121.2 90)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C12"
@@ -1807,7 +1909,7 @@
 	(footprint "Package_QFP:LQFP-64_10x10mm_P0.5mm"
 		(layer "F.Cu")
 		(uuid "23ca47a0-744d-4e12-ba52-d75d2cacb950")
-		(at 77.5 111.5)
+		(at 51.375 117)
 		(descr "LQFP, 64 Pin (https://www.analog.com/media/en/technical-documentation/data-sheets/ad7606_7606-6_7606-4.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "LQFP QFP")
 		(property "Reference" "U1"
@@ -2910,7 +3012,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
 		(layer "F.Cu")
 		(uuid "25f9bd59-c1fa-40d9-9649-4865205d6c39")
-		(at 98.75 117)
+		(at 72.625 122.5)
 		(descr "module CMS SOT223 4 pins")
 		(tags "CMS SOT")
 		(property "Reference" "U3"
@@ -3175,7 +3277,7 @@
 	(footprint "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
 		(layer "F.Cu")
 		(uuid "28448b4c-a7a9-4864-9d18-443b6a6a0731")
-		(at 80.96 127.385 90)
+		(at 54.835 132.885 90)
 		(descr "Tag-Connect programming header; http://www.tag-connect.com/Materials/TC2030-IDC.pdf")
 		(tags "tag connect programming header pogo pins")
 		(property "Reference" "J20"
@@ -3444,7 +3546,7 @@
 			)
 			(polygon
 				(pts
-					(xy 80.325 126.115) (xy 80.325 128.655) (xy 81.595 128.655) (xy 81.595 126.115)
+					(xy 54.2 131.615) (xy 54.2 134.155) (xy 55.47 134.155) (xy 55.47 131.615)
 				)
 			)
 		)
@@ -3453,7 +3555,7 @@
 	(footprint "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
 		(layer "F.Cu")
 		(uuid "28ef1d69-a8af-4aa6-8c3c-47def1ff685a")
-		(at 99.64 101.65 180)
+		(at 73.515 107.15 180)
 		(descr "USB Type-C receptacle for USB 2.0 and PD, http://www.krhro.com/uploads/soft/180320/1-1P320120243.pdf")
 		(tags "usb usb-c 2.0 pd")
 		(property "Reference" "J9"
@@ -3872,7 +3974,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "2bd9a90e-64c7-42fa-a996-1443994671a4")
-		(at 97 124.325 90)
+		(at 70.875 129.825 90)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C13"
@@ -4068,10 +4170,111 @@
 			)
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3"
+		(layer "F.Cu")
+		(uuid "2cf3b7e9-77b4-4e83-90b0-0091118789ed")
+		(at 218.925 86)
+		(descr "Mounting Hole 3.2mm, no annular, M3")
+		(tags "mounting hole 3.2mm no annular m3")
+		(property "Reference" "H2"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "0d990a90-e37c-4488-8a41-5d1e28218e90")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "708547e4-3c10-4ebf-8e50-7cb4c3845412")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0fdf24a7-6dd6-47dc-a1b3-170500147c91")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "294b78c5-609d-4131-b452-0caefc0ff715")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/0839b2b5-2961-4404-a726-cbf7e9c92d9b")
+		(sheetname "/")
+		(sheetfile "LED-DriverPCB.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "6964a1cc-ec83-47d7-9f80-f2ac1cc23546")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "fb7722de-4a79-4d83-898e-4e3bdf288dcc")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "392d072f-a575-4be1-b4d9-2b82740b2557")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 3.2 3.2)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(uuid "63be11c8-4dba-46a2-9444-f445abde576b")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "2d87795c-6b2d-4d91-a84b-c79799bbde36")
-		(at 97 108)
+		(at 70.875 113.5)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R3"
@@ -4270,7 +4473,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "2e1b0d02-1e49-41fb-a819-221b3d4aedbf")
-		(at 218 101.583799)
+		(at 57.5194 255.583799)
 		(tags "39303037 ")
 		(property "Reference" "J6"
 			(at -4.199999 0 0)
@@ -4583,7 +4786,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "3464c288-3753-451d-8e5d-b61aaa708af3")
-		(at 74.125 103.6)
+		(at 48 109.1)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C7"
@@ -4779,10 +4982,111 @@
 			)
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3"
+		(layer "F.Cu")
+		(uuid "41a5a2ed-57be-42ca-8ba5-8cf9a25670a9")
+		(at 218.925 200.3)
+		(descr "Mounting Hole 3.2mm, no annular, M3")
+		(tags "mounting hole 3.2mm no annular m3")
+		(property "Reference" "H6"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "1a504ddf-981b-4bff-970d-1ba7364093fb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "93bd2fcb-1e59-4f8a-9fe0-c4bb011f548b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e8e8b52-0c0e-4368-9728-ad00c8f80ddd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5538c08b-218b-40be-b052-b8f6a02ea567")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/d80fd3cc-fadd-451b-b059-51529b25db95")
+		(sheetname "/")
+		(sheetfile "LED-DriverPCB.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "b78a6236-aa0d-4870-82a7-82adf7c15011")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "79cd08d3-3de2-4ce2-93ef-445fd3555b8f")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "10e7fe7a-e0a1-4592-bd0c-562f6a6ad4fa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 3.2 3.2)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(uuid "d0b77931-2c26-46f0-b778-f023d3d7c6f9")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "26013114:CONN_5569-02A_MOL"
 		(layer "F.Cu")
 		(uuid "599ce50b-488b-43ac-949e-741ea704538e")
-		(at 190.75 144.999999)
+		(at 30.2694 298.999999)
 		(tags "26013114 ")
 		(property "Reference" "J18"
 			(at 0 -2.75 0)
@@ -5057,7 +5361,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "60de07a6-4fcb-4acc-82b8-1b02f6b90e42")
-		(at 84.625 106.2)
+		(at 58.5 111.7)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C6"
@@ -5256,7 +5560,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "64a064ab-f295-4cc6-badf-842e517de2ad")
-		(at 69.3 115.075 -90)
+		(at 43.175 120.575 -90)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C8"
@@ -5455,7 +5759,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "67d3ea45-3409-4779-9dcf-410bc4afc897")
-		(at 92.75 119.9 -90)
+		(at 66.625 125.4 -90)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C11"
@@ -5654,7 +5958,7 @@
 	(footprint "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm"
 		(layer "F.Cu")
 		(uuid "6af1a4e4-8922-4454-a8d2-a78ca74a60a7")
-		(at 66.5 109.52 -90)
+		(at 40.375 115.02 -90)
 		(descr "SMD Crystal SERIES SMD3225/4 http://www.txccrystal.com/images/pdf/7m-accuracy.pdf, 3.2x2.5mm^2 package")
 		(tags "SMD SMT crystal")
 		(property "Reference" "X1"
@@ -5883,7 +6187,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "72e5d059-3017-4150-8cef-4b8f3805ee01")
-		(at 218 66.751397)
+		(at 57.5194 220.751397)
 		(tags "39303037 ")
 		(property "Reference" "J2"
 			(at -4.199999 0 0)
@@ -6196,7 +6500,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "77ca506d-0811-4eb1-9b94-d2bcee496fe7")
-		(at 68.925 112.6 180)
+		(at 42.8 118.1 180)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C10"
@@ -6395,7 +6699,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "7a33c4fc-3340-4284-8607-77ffc4dd4fbe")
-		(at 77.6 103.7 180)
+		(at 51.475 109.2 180)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R1"
@@ -6594,7 +6898,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "7b356954-25a0-4e8d-b212-de357524aefe")
-		(at 107.1 124.425 90)
+		(at 80.975 129.925 90)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C14"
@@ -6790,16 +7094,117 @@
 			)
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3"
+		(layer "F.Cu")
+		(uuid "80805317-c9c1-44b4-94d5-c19f35cc6dd4")
+		(at 336.475 200.3)
+		(descr "Mounting Hole 3.2mm, no annular, M3")
+		(tags "mounting hole 3.2mm no annular m3")
+		(property "Reference" "H8"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "ab4ad508-c2c5-462e-b8a8-8f946a8b987b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "29861149-6e98-405d-85e3-3f04593af695")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b0530482-f360-4caf-80c4-1aa5a0e54d1f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b196cb71-010e-45ed-8f9e-746da4748afa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/14db49bf-6561-4e19-b0db-e8b1c837cff7")
+		(sheetname "/")
+		(sheetfile "LED-DriverPCB.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "862ae67d-8db9-4986-9395-9325b2d074b4")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "427150a0-85fb-4b9c-a78d-3c5c815d17cb")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "542d8f12-a085-4ceb-a357-44b2fe43de84")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 3.2 3.2)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(uuid "b9a0b005-a243-4307-9893-8e0d71b81ecd")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "86ad1da0-a70a-4866-9370-0ff8ac38a2ee")
-		(at 201.4806 119)
+		(at 41 273)
 		(tags "39303037 ")
 		(property "Reference" "J7"
 			(at -4.199999 0 0)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "191a338e-ab56-4783-ae00-5c00fcb96712")
+			(uuid "d535c9ef-05ac-4fe9-bd43-88379b0118d5")
 			(effects
 				(font
 					(size 1 1)
@@ -6811,7 +7216,7 @@
 			(at -4.199999 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "52f4d337-7d61-4624-81f8-adbdfa355b34")
+			(uuid "4c15054b-4eca-4fc4-9e07-fb12b6ec05b5")
 			(effects
 				(font
 					(size 1 1)
@@ -6823,7 +7228,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0d2da01e-11aa-4c34-a590-68a27a5db6c0")
+			(uuid "da6e2b9f-a9df-45d6-a2b6-38f7d499c6a7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6835,7 +7240,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "15ca38a7-7392-429c-90ec-2d3f2f6d212b")
+			(uuid "632b5f39-0909-464f-8143-b720b33dd171")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7106,7 +7511,7 @@
 	(footprint "26013114:CONN_5569-02A_MOL"
 		(layer "F.Cu")
 		(uuid "87e9aebb-accc-497c-8e81-ed4592e745f2")
-		(at 170.75 144.999999)
+		(at 141.9666 376.889749)
 		(tags "26013114 ")
 		(property "Reference" "J17"
 			(at 0 -2.75 0)
@@ -7381,7 +7786,7 @@
 	(footprint "26013114:CONN_5569-02A_MOL"
 		(layer "F.Cu")
 		(uuid "8919ce65-023b-409e-8ce7-4285e8ac027c")
-		(at 130.7166 145)
+		(at 101.9332 376.88975)
 		(tags "26013114 ")
 		(property "Reference" "J15"
 			(at 0 -2.75 0)
@@ -7656,13 +8061,13 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "8b47f75f-a754-4056-8654-b33a40bd0fe6")
-		(at 218 119)
+		(at 57.5194 273)
 		(tags "39303037 ")
 		(property "Reference" "J8"
 			(at -4.199999 0 0)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "d63e80c9-3164-487c-a7da-683e5e481929")
+			(uuid "723e0968-af9f-4676-bba2-859e38d16005")
 			(effects
 				(font
 					(size 1 1)
@@ -7674,7 +8079,7 @@
 			(at -4.199999 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "ce056a7b-2142-4a71-83e1-15a1be1341c8")
+			(uuid "42b2f31c-c35e-402b-a1cb-36a15bb3da3e")
 			(effects
 				(font
 					(size 1 1)
@@ -7686,7 +8091,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7e49350e-84bb-48ad-adb1-e1ee069101ec")
+			(uuid "8bf39d19-1275-4cb8-a818-f7336359321d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7698,7 +8103,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c1614d1b-dfae-4dc7-96e3-42c095e1a526")
+			(uuid "ae86d547-ce1f-4990-841c-93b2963f15f9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7969,7 +8374,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "8d5b9f64-cad5-47da-a2f1-da4c44bd5977")
-		(at 80.8 119.4 180)
+		(at 54.675 124.9 180)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C3"
@@ -8168,7 +8573,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "97908ac7-1842-4cd4-8afa-e70a2b00a83a")
-		(at 101.875 108 180)
+		(at 75.75 113.5 180)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R2"
@@ -8364,10 +8769,111 @@
 			)
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3"
+		(layer "F.Cu")
+		(uuid "980fbe7c-9cc7-4402-8857-67336a6de181")
+		(at 238.05 200.3)
+		(descr "Mounting Hole 3.2mm, no annular, M3")
+		(tags "mounting hole 3.2mm no annular m3")
+		(property "Reference" "H7"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "ad13b433-3efe-4450-87a3-ac5a3a0bffeb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "806e518e-1418-4e06-adaf-3b177efc7688")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d5b56f9e-f0f2-4fa5-9945-9a15997f8eee")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8a6646d1-0e9d-40df-82a3-5cee20526b3a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/a2317b5e-527b-4951-bff6-b70d58c25c4c")
+		(sheetname "/")
+		(sheetfile "LED-DriverPCB.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "aa8b149e-04d6-4002-a9ad-3adcaa0b2993")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "3315e828-01c8-4345-8482-696f715f5673")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "77c60c43-2167-49b4-b9f3-10f41d532fd3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 3.2 3.2)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(uuid "de77115d-3c41-4b72-bc74-8de0c60a3189")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Capacitor_SMD:C_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "9831889e-a995-45a9-8ec4-1a1196cee8dd")
-		(at 69.5 110.5 90)
+		(at 43.375 116 90)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C2"
@@ -8566,7 +9072,7 @@
 	(footprint "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 		(layer "F.Cu")
 		(uuid "a59cbf59-36d2-431f-a929-35b6ad0e8c40")
-		(at 102.0375 127.625)
+		(at 75.9125 133.125)
 		(descr "TSSOP, 20 Pin (JEDEC MO-153 Var AC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "TSSOP SO")
 		(property "Reference" "U2"
@@ -8960,7 +9466,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23-6"
 		(layer "F.Cu")
 		(uuid "a67ac998-d001-470f-b708-10d821f16a5d")
-		(at 89.75 109.75)
+		(at 63.625 115.25)
 		(descr "SOT, 6 Pin (JEDEC MO-178 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=MO-178), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U4"
@@ -9214,7 +9720,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "a9018831-81e2-4c93-b195-ff89d264301c")
-		(at 109.3 124.35 90)
+		(at 83.175 129.85 90)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C15"
@@ -9410,10 +9916,111 @@
 			)
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3"
+		(layer "F.Cu")
+		(uuid "bfeb462e-4904-4b8c-a88c-e54034abd1f9")
+		(at 120.5 86)
+		(descr "Mounting Hole 3.2mm, no annular, M3")
+		(tags "mounting hole 3.2mm no annular m3")
+		(property "Reference" "H1"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "e7f33351-a4a1-4523-8965-bfaca8098678")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "b2088534-0bbc-4a5c-a7b0-028e8d4f20fb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "43e9935a-e91c-4447-b0d2-6112b74cea1a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b75511a9-8294-4b52-a9f4-908d5089d6d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/158b5756-ee43-4828-a3ee-fb65a846c403")
+		(sheetname "/")
+		(sheetfile "LED-DriverPCB.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "03b2a44f-d924-430e-a46b-27d5f753537c")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "97b5a9dc-3c83-41b4-9f83-9eb6dadf20c0")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "de452af9-792a-4a70-9c05-efc3584ea903")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 3.2 3.2)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(uuid "2183d228-9749-4a28-a12e-dc1a806fe406")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "26013114:CONN_5569-02A_MOL"
 		(layer "F.Cu")
 		(uuid "c6588260-27c8-4b14-be25-9c0c4ce9edb3")
-		(at 210.7166 145.139749)
+		(at 50.236 299.139749)
 		(tags "26013114 ")
 		(property "Reference" "J19"
 			(at 0 -2.75 0)
@@ -9688,7 +10295,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "c6f2e32c-ebb2-42b4-b7e2-afd93bf56484")
-		(at 218 84.167598)
+		(at 57.5194 238.167598)
 		(tags "39303037 ")
 		(property "Reference" "J4"
 			(at -4.199999 0 0)
@@ -10001,7 +10608,7 @@
 	(footprint "26013114:CONN_5569-02A_MOL"
 		(layer "F.Cu")
 		(uuid "caab1ea5-6af9-412b-b8b7-cdb53b88c0c6")
-		(at 70.7166 144.889749)
+		(at 41.9332 376.779499)
 		(tags "26013114 ")
 		(property "Reference" "J12"
 			(at 0 -2.75 0)
@@ -10276,7 +10883,7 @@
 	(footprint "Button_Switch_SMD:SW_SPDT_PCM12"
 		(layer "F.Cu")
 		(uuid "ccb441cd-a7b5-4994-afbb-0dd84eae701b")
-		(at 84.35 99.37 180)
+		(at 58.225 104.87 180)
 		(descr "Ultraminiature Surface Mount Slide Switch, right-angle, https://www.ckswitches.com/media/1424/pcm.pdf")
 		(property "Reference" "SW1"
 			(at 0 -3.2 0)
@@ -10702,7 +11309,7 @@
 	(footprint "26013114:CONN_5569-02A_MOL"
 		(layer "F.Cu")
 		(uuid "d9a04c37-6cc4-42d3-a18f-4d83e00e80c6")
-		(at 90.7166 144.889749)
+		(at 61.9332 376.779499)
 		(tags "26013114 ")
 		(property "Reference" "J13"
 			(at 0 -2.75 0)
@@ -10977,7 +11584,7 @@
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "de8018ee-31dd-463d-9139-4dd56966c032")
-		(at 74.3 119.4 180)
+		(at 48.175 124.9 180)
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C4"
@@ -11173,10 +11780,212 @@
 			)
 		)
 	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3"
+		(layer "F.Cu")
+		(uuid "e24c6ae5-2614-4887-840f-ac60681e9968")
+		(at 238.05 86)
+		(descr "Mounting Hole 3.2mm, no annular, M3")
+		(tags "mounting hole 3.2mm no annular m3")
+		(property "Reference" "H3"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "92df7ccc-6e25-4a9c-a0b9-1a81b566cd15")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "c456268a-2ae2-4d46-a10b-c64875f0564f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ebe26c2c-9990-4b22-98d7-a6f210737219")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a97bc440-a63b-481e-ae60-0f8c403f03f6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/ce18b083-39e0-4ccb-aa7d-8f053d002723")
+		(sheetname "/")
+		(sheetfile "LED-DriverPCB.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "feb3f3cf-e923-4be0-95d4-7acddc648e5e")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "620f8720-7793-4d4c-adae-7e0c7ec3fd1e")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "b0dd3932-93f9-45a1-8975-65a13c75a73c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 3.2 3.2)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(uuid "1f98d6b5-1a32-4284-a94f-59f8580346a7")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "MountingHole:MountingHole_3.2mm_M3"
+		(layer "F.Cu")
+		(uuid "e472b8f5-9895-4cc6-80b0-609c37aeb2ee")
+		(at 336.475 86)
+		(descr "Mounting Hole 3.2mm, no annular, M3")
+		(tags "mounting hole 3.2mm no annular m3")
+		(property "Reference" "H4"
+			(at 0 -4.2 0)
+			(layer "F.SilkS")
+			(uuid "37e9b4a5-73e8-4622-bf31-3e5b851b504a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 4.2 0)
+			(layer "F.Fab")
+			(uuid "447bd9f4-ec8a-4036-b772-7a53a05eb13e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a731c496-6310-4a38-a6a4-9cc13ea782a5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b7ea538a-f062-44ba-b6a6-1c77f81e58da")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/17bfbdc8-8141-43f4-a760-5aafc8021767")
+		(sheetname "/")
+		(sheetfile "LED-DriverPCB.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 3.2 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "be5ee883-1576-498c-b324-62f7ce561a3d")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 3.45 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "126e707b-2390-49c2-9360-36c19c404303")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "8f8e391e-6d36-4890-ba68-c27a0a01d499")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 3.2 3.2)
+			(drill 3.2)
+			(layers "*.Cu" "*.Mask")
+			(uuid "c4f3c1fc-4fdc-41c4-a807-b5d5cc71fd8b")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "26013114:CONN_5569-02A_MOL"
 		(layer "F.Cu")
 		(uuid "e66733ae-e7ea-4d0d-b2cf-3884935bce9a")
-		(at 110.7166 144.889749)
+		(at 81.9332 376.779499)
 		(tags "26013114 ")
 		(property "Reference" "J14"
 			(at 0 -2.75 0)
@@ -11764,7 +12573,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "f195d9ad-8041-4b51-aeef-0e0950697872")
-		(at 201.4806 101.583799)
+		(at 41 255.583799)
 		(tags "39303037 ")
 		(property "Reference" "J5"
 			(at -4.199999 0 0)
@@ -12077,7 +12886,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "f8acf8eb-cec3-414b-8c21-908e38729c04")
-		(at 87.8 112.5)
+		(at 61.675 118)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R5"
@@ -12273,137 +13082,203 @@
 			)
 		)
 	)
+	(gr_circle
+		(center 344.947 77.491)
+		(end 349.536 77.491)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "17977230-f7a1-43f8-ba58-fe1b640b38fd")
+	)
+	(gr_circle
+		(center 112.029 77.491)
+		(end 116.618 77.491)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "3edd8079-11f1-42ec-874e-dd0ebf97e497")
+	)
+	(gr_circle
+		(center 112.029 208.809)
+		(end 116.618 208.809)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "a963a71d-90f8-4f75-9c4f-8cce5e315748")
+	)
+	(gr_circle
+		(center 228.529 208.991)
+		(end 233.118 208.991)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ad8e6cb4-4ca2-40ad-8694-d6e75f238b42")
+	)
+	(gr_circle
+		(center 228.488 77.491)
+		(end 233.077 77.491)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "c1b2bf5d-5a3f-43be-b75b-b64e2979857a")
+	)
+	(gr_circle
+		(center 344.988 208.991)
+		(end 349.577 208.991)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "cf7c7d26-a739-416e-894e-f97d36e65158")
+	)
 	(segment
-		(start 71.825 109.75)
-		(end 70.25 109.75)
+		(start 45.7 115.25)
+		(end 44.125 115.25)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 17)
 		(uuid "2f737df6-31cd-41cc-9dca-011298bd2b54")
 	)
 	(segment
-		(start 69.5 109)
-		(end 69.029 109.471)
+		(start 43.375 114.5)
+		(end 42.904 114.971)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 17)
 		(uuid "5089493a-4cbf-4a36-9eeb-9baf1353bce6")
 	)
 	(segment
-		(start 65.65 108.52)
-		(end 65.65 108.42)
+		(start 39.525 114.02)
+		(end 39.525 113.92)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 17)
 		(uuid "6d060970-7069-49bd-89fa-97bb2dea3bd5")
 	)
 	(segment
-		(start 66.601 109.471)
-		(end 65.65 108.52)
+		(start 40.476 114.971)
+		(end 39.525 114.02)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 17)
 		(uuid "a03e7371-ac95-40c6-b1db-18a14e980c72")
 	)
 	(segment
-		(start 70.25 109.75)
-		(end 69.5 109)
+		(start 44.125 115.25)
+		(end 43.375 114.5)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 17)
 		(uuid "a80022ee-5a55-4d67-88f4-ea93fc6edd7e")
 	)
 	(segment
-		(start 69.029 109.471)
-		(end 66.601 109.471)
+		(start 42.904 114.971)
+		(end 40.476 114.971)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 17)
 		(uuid "e6fe30b6-0bae-42e2-b303-3cc5b14f342c")
 	)
 	(segment
-		(start 70.215466 110.98)
-		(end 70.945466 110.25)
+		(start 44.090466 116.48)
+		(end 44.820466 115.75)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 32)
 		(uuid "14d5817c-febc-4246-9ea6-3a68dbf647ce")
 	)
 	(segment
-		(start 67.35 110.62)
-		(end 67.73 111)
+		(start 41.225 116.12)
+		(end 41.605 116.5)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 32)
 		(uuid "1d684ded-4265-4152-948b-c218b928849c")
 	)
 	(segment
-		(start 69.48 111)
-		(end 69.5 110.98)
+		(start 43.355 116.5)
+		(end 43.375 116.48)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 32)
 		(uuid "2b9c9e40-3829-4a5a-809f-3499b885732a")
 	)
 	(segment
-		(start 67.73 111)
-		(end 69.48 111)
+		(start 41.605 116.5)
+		(end 43.355 116.5)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 32)
 		(uuid "8d0d1cf8-194a-479e-b928-e272f47547e9")
 	)
 	(segment
-		(start 69.5 110.98)
-		(end 70.215466 110.98)
+		(start 43.375 116.48)
+		(end 44.090466 116.48)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 32)
 		(uuid "c040f6f5-0cdc-4f3f-ab68-104e97ad0867")
 	)
 	(segment
-		(start 70.945466 110.25)
-		(end 71.825 110.25)
+		(start 44.820466 115.75)
+		(end 45.7 115.75)
 		(width 0.3)
 		(layer "F.Cu")
 		(net 32)
 		(uuid "d7ecfb9a-8824-4d02-80f0-c7bbb5ef685e")
 	)
 	(segment
-		(start 101.4 104.3)
-		(end 97.8 104.3)
+		(start 75.275 109.8)
+		(end 71.675 109.8)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
 		(uuid "2ab3ec0d-78af-4249-85ad-01e30effd986")
 	)
 	(segment
-		(start 102.09 104.99)
-		(end 101.4 104.3)
+		(start 75.965 110.49)
+		(end 75.275 109.8)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
 		(uuid "753eecf8-ae51-46c9-affc-c39261edc168")
 	)
 	(segment
-		(start 102.09 105.695)
-		(end 102.09 104.99)
+		(start 75.965 111.195)
+		(end 75.965 110.49)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
 		(uuid "7b63e89f-9846-4094-bd8b-aee64e6dd7cf")
 	)
 	(segment
-		(start 97.19 104.91)
-		(end 97.19 105.695)
+		(start 71.065 110.41)
+		(end 71.065 111.195)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
 		(uuid "9c0c5c6e-0714-4ecd-b765-9f150fc3d8bc")
 	)
 	(segment
-		(start 97.8 104.3)
-		(end 97.19 104.91)
+		(start 71.675 109.8)
+		(end 71.065 110.41)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
