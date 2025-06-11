@@ -499,13 +499,13 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "0bf01648-3307-403c-869a-909bfade1746")
-		(at 163.695599 203.3229)
+		(at 163.307099 203)
 		(tags "39303037 ")
 		(property "Reference" "J3"
 			(at -4.199999 0 0)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "59ab199b-22cd-4208-9537-be813508dfd5")
+			(uuid "fcc02a41-6398-455d-b43e-c44c5ba7935a")
 			(effects
 				(font
 					(size 1 1)
@@ -517,7 +517,7 @@
 			(at -4.199999 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "30a365a0-fc07-4ad9-9da9-af22c089fc65")
+			(uuid "9334459d-aa98-4b67-9045-442bb4729ea6")
 			(effects
 				(font
 					(size 1 1)
@@ -529,7 +529,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3ed7f93a-c2f1-458c-877d-e1fdfab16a40")
+			(uuid "760560c0-eb09-415d-9a0a-85d08d785f28")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -541,7 +541,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4db091eb-1e58-45f4-9292-e8f5f936750c")
+			(uuid "f90f8ed0-71ef-4e20-998d-40ed83026337")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4472,7 +4472,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "2e1b0d02-1e49-41fb-a819-221b3d4aedbf")
-		(at 281.195599 203.3229)
+		(at 280.856599 203)
 		(tags "39303037 ")
 		(property "Reference" "J6"
 			(at -4.199999 0 0)
@@ -6186,7 +6186,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "72e5d059-3017-4150-8cef-4b8f3805ee01")
-		(at 142.195599 203.1409)
+		(at 142.096099 203)
 		(tags "39303037 ")
 		(property "Reference" "J2"
 			(at -4.199999 0 0)
@@ -7197,7 +7197,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "86ad1da0-a70a-4866-9370-0ff8ac38a2ee")
-		(at 304.195599 203.3229)
+		(at 302.067599 203)
 		(tags "39303037 ")
 		(property "Reference" "J7"
 			(at -4.199999 0 0)
@@ -8060,7 +8060,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "8b47f75f-a754-4056-8654-b33a40bd0fe6")
-		(at 326.195599 203.3229)
+		(at 323.278599 203)
 		(tags "39303037 ")
 		(property "Reference" "J8"
 			(at -4.199999 0 0)
@@ -10294,7 +10294,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "c6f2e32c-ebb2-42b4-b7e2-afd93bf56484")
-		(at 185.695599 203.3229)
+		(at 184.518099 203)
 		(tags "39303037 ")
 		(property "Reference" "J4"
 			(at -4.199999 0 0)
@@ -11833,7 +11833,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "e7786b8e-7c1e-4bf2-aaf9-5376eb6d7b8a")
-		(at 207.695599 203.3229)
+		(at 205.729099 203)
 		(tags "39303037 ")
 		(property "Reference" "J1"
 			(at -4.199999 0 0)
@@ -12146,7 +12146,7 @@
 	(footprint "39303037:CONN_5569-03A4&slash_5_MOL"
 		(layer "F.Cu")
 		(uuid "f195d9ad-8041-4b51-aeef-0e0950697872")
-		(at 258.195599 203.3229)
+		(at 259.645599 203)
 		(tags "39303037 ")
 		(property "Reference" "J5"
 			(at -4.199999 0 0)
