@@ -8054,6 +8054,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C1590"
+			(at 55.88 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1db10cc3-de68-47ae-aeaf-4ba6ea39d6cf")
 		)
@@ -8191,6 +8199,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 294.64 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project ""
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
@@ -8252,6 +8268,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C1590"
+			(at 44.45 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8452,6 +8476,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C23186"
+			(at 207.01 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "afa1138a-0cad-4ebb-b6b5-dc8d248f3c46")
 		)
@@ -8587,6 +8619,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 354.33 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
@@ -8649,6 +8689,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 294.64 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(instances
@@ -8715,6 +8763,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 314.96 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
@@ -8774,6 +8830,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C5184132"
+			(at 73.66 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8844,6 +8908,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 228.6 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9246,6 +9318,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C15850"
+			(at 46.99 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "8808f604-de1e-4533-80b6-f4c5717f5652")
 		)
@@ -9313,6 +9393,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C1590"
+			(at 67.31 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9516,6 +9604,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 170.18 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "de70ab86-b8d3-4e77-8353-712c140b7c41")
 		)
@@ -9584,6 +9680,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C53406"
+			(at 55.88 250.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "10"
@@ -9710,6 +9814,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C15850"
+			(at 81.28 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1caf12d3-e4b4-410b-b146-98ca6366e5f6")
 		)
@@ -9776,6 +9888,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C6186"
+			(at 62.23 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -9851,6 +9971,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 228.6 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6ad44399-f2cf-4eb7-8ec9-1e381451c586")
 		)
@@ -9920,6 +10048,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C1590"
+			(at 33.02 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f851f448-5895-4992-956b-2554977d2a9d")
 		)
@@ -9985,6 +10121,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C400090"
+			(at 57.15 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "4"
@@ -10063,6 +10207,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 335.28 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
@@ -10124,6 +10276,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C1590"
+			(at 67.31 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10194,6 +10354,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C1590"
+			(at 40.64 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10332,6 +10500,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 170.18 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3b96aeaf-eb40-4b07-b8dd-80e074d86a5e")
 		)
@@ -10468,6 +10644,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C1590"
+			(at 90.17 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10672,6 +10856,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C22843"
+			(at 128.27 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "253985d3-e647-43cd-9572-47c59bea57c2")
 		)
@@ -10874,6 +11066,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 170.18 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b56b6e76-ceb4-4352-a217-df828407d96f")
 		)
@@ -10944,6 +11144,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 170.18 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "77582299-6e2f-459e-bce0-69e528a4f08c")
 		)
@@ -11011,6 +11219,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C15850"
+			(at 21.59 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11278,6 +11494,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 170.18 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b9f24ec8-d617-4beb-baf5-3fd642b1318d")
 		)
@@ -11314,7 +11538,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "10p"
 			(at 50.8 96.774 0)
 			(effects
 				(font
@@ -11348,6 +11572,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C161145"
+			(at 46.99 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -11418,6 +11650,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 354.33 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(instances
@@ -11545,6 +11785,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C23186"
+			(at 207.01 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -11681,6 +11929,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 228.6 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11822,6 +12078,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 228.6 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "169c3eeb-8a7c-420d-9cb7-74e78043ba5f")
 		)
@@ -11958,6 +12222,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "USBLC6-2SC6"
+			(at 189.23 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12106,6 +12378,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 228.6 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12377,6 +12657,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C861451"
+			(at 30.48 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "799f940b-5078-4c33-9c57-8d76fcc028e0")
 		)
@@ -12445,6 +12733,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 228.6 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12518,6 +12814,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C165948"
+			(at 233.68 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "B8"
@@ -12700,6 +13004,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 228.6 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "47682396-df72-4dca-bd82-d29cecaacb44")
 		)
@@ -12839,6 +13151,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 314.96 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
@@ -12867,7 +13187,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "10p"
 			(at 72.39 96.5199 0)
 			(effects
 				(font
@@ -12901,6 +13221,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C161145"
+			(at 68.58 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -12973,6 +13301,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 335.28 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
@@ -13035,6 +13371,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 170.18 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13240,6 +13584,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 231.14 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -13587,6 +13939,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C1590"
+			(at 69.85 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "0c15fd68-89e0-42a1-a7e3-05176648c280")
 		)
@@ -13722,6 +14082,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" ""
+			(at 228.6 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "370f1621-a16b-4312-8c27-524020de5dfe")
 		)
@@ -13794,6 +14162,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8323"
+			(at 104.14 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "51"
@@ -14051,6 +14427,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C1590"
+			(at 78.74 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "041d564f-45d2-44f4-93a4-2d0a13a39333")
 		)
@@ -14119,6 +14503,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 170.18 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14256,6 +14648,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C45783"
+			(at 77.47 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -14524,6 +14924,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 170.18 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
