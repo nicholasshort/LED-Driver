@@ -53,8 +53,12 @@ DMA_HandleTypeDef hdma_tim5_ch4_trig;
 DMA_HandleTypeDef hdma_tim8_ch1;
 
 /* USER CODE BEGIN PV */
-uint8_t usbTxBuf[USB_BUFLEN];
-uint16_t usbTxBufLen;
+uint8_t	 	usbTxBuf[USB_BUFLEN];
+uint16_t 	usbTxBufLen;
+
+uint8_t 	usbRxBuf[USB_BUFLEN];
+uint16_t 	usbRxBufLen;
+uint8_t  	usbRxFlag = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -73,6 +77,14 @@ static void MX_TIM3_Init(void);
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 
 	SK6812_Callback();
+
+}
+
+void USB_RxCallback(uint8_t* Buf, uint32_t* Len) {
+
+	memcpy(usbRxBuf, Buf, *Len);
+	usbRxBufLen = *Len;
+	usbRxFlag = 1;
 
 }
 /* USER CODE END 0 */
@@ -145,10 +157,20 @@ int main(void)
 		}
 		SK6812_Update();
 
-		usbTxBufLen = snprintf((char*)usbTxBuf, USB_BUFLEN, "Hi");
-		CDC_Transmit_FS(usbTxBuf, usbTxBufLen);
+		if (usbRxFlag && usbRxBufLen) {
 
-		HAL_Delay(10);
+			usbTxBufLen = snprintf((char*)usbTxBuf, USB_BUFLEN, "%s\n", usbRxBuf);
+
+			CDC_Transmit_FS(usbTxBuf, usbTxBufLen);
+
+			usbRxFlag = 0;
+			usbRxBufLen = 0;
+
+		}
+
+//		CDC_Transmit_FS("Hello World\n", 13);
+
+		HAL_Delay(500);
   }
   /* USER CODE END 3 */
 }
