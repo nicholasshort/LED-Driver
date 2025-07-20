@@ -29,8 +29,6 @@ extern DMA_HandleTypeDef hdma_tim3_ch3;
 
 extern DMA_HandleTypeDef hdma_tim3_ch4_up;
 
-extern DMA_HandleTypeDef hdma_tim5_ch1;
-
 extern DMA_HandleTypeDef hdma_tim5_ch2;
 
 extern DMA_HandleTypeDef hdma_tim5_ch3_up;
@@ -136,11 +134,11 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* htim_pwm)
 
     /* TIM3_CH3 Init */
     hdma_tim3_ch3.Instance = DMA1_Channel2;
-    hdma_tim3_ch3.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_tim3_ch3.Init.Direction = DMA_MEMORY_TO_PERIPH;
     hdma_tim3_ch3.Init.PeriphInc = DMA_PINC_DISABLE;
     hdma_tim3_ch3.Init.MemInc = DMA_MINC_ENABLE;
     hdma_tim3_ch3.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
-    hdma_tim3_ch3.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+    hdma_tim3_ch3.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
     hdma_tim3_ch3.Init.Mode = DMA_NORMAL;
     hdma_tim3_ch3.Init.Priority = DMA_PRIORITY_LOW;
     if (HAL_DMA_Init(&hdma_tim3_ch3) != HAL_OK)
@@ -169,6 +167,9 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* htim_pwm)
     __HAL_LINKDMA(htim_pwm,hdma[TIM_DMA_ID_CC4],hdma_tim3_ch4_up);
     __HAL_LINKDMA(htim_pwm,hdma[TIM_DMA_ID_UPDATE],hdma_tim3_ch4_up);
 
+    /* TIM3 interrupt Init */
+    HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(TIM3_IRQn);
     /* USER CODE BEGIN TIM3_MspInit 1 */
 
     /* USER CODE END TIM3_MspInit 1 */
@@ -182,22 +183,6 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* htim_pwm)
     __HAL_RCC_TIM5_CLK_ENABLE();
 
     /* TIM5 DMA Init */
-    /* TIM5_CH1 Init */
-    hdma_tim5_ch1.Instance = DMA2_Channel5;
-    hdma_tim5_ch1.Init.Direction = DMA_PERIPH_TO_MEMORY;
-    hdma_tim5_ch1.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_tim5_ch1.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_tim5_ch1.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
-    hdma_tim5_ch1.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
-    hdma_tim5_ch1.Init.Mode = DMA_NORMAL;
-    hdma_tim5_ch1.Init.Priority = DMA_PRIORITY_LOW;
-    if (HAL_DMA_Init(&hdma_tim5_ch1) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
-    __HAL_LINKDMA(htim_pwm,hdma[TIM_DMA_ID_CC1],hdma_tim5_ch1);
-
     /* TIM5_CH2 Init */
     hdma_tim5_ch2.Instance = DMA2_Channel4;
     hdma_tim5_ch2.Init.Direction = DMA_PERIPH_TO_MEMORY;
@@ -382,6 +367,9 @@ void HAL_TIM_PWM_MspDeInit(TIM_HandleTypeDef* htim_pwm)
     HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_CC3]);
     HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_CC4]);
     HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_UPDATE]);
+
+    /* TIM3 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(TIM3_IRQn);
     /* USER CODE BEGIN TIM3_MspDeInit 1 */
 
     /* USER CODE END TIM3_MspDeInit 1 */
@@ -395,7 +383,6 @@ void HAL_TIM_PWM_MspDeInit(TIM_HandleTypeDef* htim_pwm)
     __HAL_RCC_TIM5_CLK_DISABLE();
 
     /* TIM5 DMA DeInit */
-    HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_CC1]);
     HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_CC2]);
     HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_CC3]);
     HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_UPDATE]);
@@ -418,51 +405,6 @@ void HAL_TIM_PWM_MspDeInit(TIM_HandleTypeDef* htim_pwm)
     /* USER CODE BEGIN TIM8_MspDeInit 1 */
 
     /* USER CODE END TIM8_MspDeInit 1 */
-  }
-
-}
-
-/**
-  * @brief PCD MSP Initialization
-  * This function configures the hardware resources used in this example
-  * @param hpcd: PCD handle pointer
-  * @retval None
-  */
-void HAL_PCD_MspInit(PCD_HandleTypeDef* hpcd)
-{
-  if(hpcd->Instance==USB)
-  {
-    /* USER CODE BEGIN USB_MspInit 0 */
-
-    /* USER CODE END USB_MspInit 0 */
-    /* Peripheral clock enable */
-    __HAL_RCC_USB_CLK_ENABLE();
-    /* USER CODE BEGIN USB_MspInit 1 */
-
-    /* USER CODE END USB_MspInit 1 */
-
-  }
-
-}
-
-/**
-  * @brief PCD MSP De-Initialization
-  * This function freeze the hardware resources used in this example
-  * @param hpcd: PCD handle pointer
-  * @retval None
-  */
-void HAL_PCD_MspDeInit(PCD_HandleTypeDef* hpcd)
-{
-  if(hpcd->Instance==USB)
-  {
-    /* USER CODE BEGIN USB_MspDeInit 0 */
-
-    /* USER CODE END USB_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_USB_CLK_DISABLE();
-    /* USER CODE BEGIN USB_MspDeInit 1 */
-
-    /* USER CODE END USB_MspDeInit 1 */
   }
 
 }

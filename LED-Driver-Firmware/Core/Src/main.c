@@ -18,10 +18,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define USB_BUFLEN 128
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -46,16 +47,14 @@ TIM_HandleTypeDef htim8;
 DMA_HandleTypeDef hdma_tim3_ch1_trig;
 DMA_HandleTypeDef hdma_tim3_ch3;
 DMA_HandleTypeDef hdma_tim3_ch4_up;
-DMA_HandleTypeDef hdma_tim5_ch1;
 DMA_HandleTypeDef hdma_tim5_ch2;
 DMA_HandleTypeDef hdma_tim5_ch3_up;
 DMA_HandleTypeDef hdma_tim5_ch4_trig;
 DMA_HandleTypeDef hdma_tim8_ch1;
 
-PCD_HandleTypeDef hpcd_USB_FS;
-
 /* USER CODE BEGIN PV */
-
+uint8_t usbTxBuf[USB_BUFLEN];
+uint16_t usbTxBufLen;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -63,7 +62,6 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_TIM5_Init(void);
-static void MX_USB_PCD_Init(void);
 static void MX_TIM8_Init(void);
 static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
@@ -74,9 +72,7 @@ static void MX_TIM3_Init(void);
 /* USER CODE BEGIN 0 */
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 
-	HAL_TIM_PWM_Stop_DMA(&htim5, TIM_CHANNEL_1);
-
-	SK6812_DMA_COMPLETE_FLAG = 1;
+	SK6812_Callback();
 
 }
 /* USER CODE END 0 */
@@ -112,9 +108,9 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_TIM5_Init();
-  MX_USB_PCD_Init();
   MX_TIM8_Init();
   MX_TIM3_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   SK6812_Init();
   /* USER CODE END 2 */
@@ -149,7 +145,8 @@ int main(void)
 		}
 		SK6812_Update();
 
-		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+		usbTxBufLen = snprintf((char*)usbTxBuf, USB_BUFLEN, "Hi");
+		CDC_Transmit_FS(usbTxBuf, usbTxBufLen);
 
 		HAL_Delay(10);
   }
@@ -223,7 +220,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 1-1;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 65535;
+  htim3.Init.Period = 90-1;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
@@ -382,37 +379,6 @@ static void MX_TIM8_Init(void)
 
   /* USER CODE END TIM8_Init 2 */
   HAL_TIM_MspPostInit(&htim8);
-
-}
-
-/**
-  * @brief USB Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USB_PCD_Init(void)
-{
-
-  /* USER CODE BEGIN USB_Init 0 */
-
-  /* USER CODE END USB_Init 0 */
-
-  /* USER CODE BEGIN USB_Init 1 */
-
-  /* USER CODE END USB_Init 1 */
-  hpcd_USB_FS.Instance = USB;
-  hpcd_USB_FS.Init.dev_endpoints = 8;
-  hpcd_USB_FS.Init.speed = PCD_SPEED_FULL;
-  hpcd_USB_FS.Init.low_power_enable = DISABLE;
-  hpcd_USB_FS.Init.lpm_enable = DISABLE;
-  hpcd_USB_FS.Init.battery_charging_enable = DISABLE;
-  if (HAL_PCD_Init(&hpcd_USB_FS) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USB_Init 2 */
-
-  /* USER CODE END USB_Init 2 */
 
 }
 
