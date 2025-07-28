@@ -5157,16 +5157,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "*Tantalum capacitors"
-		(exclude_from_sim no)
-		(at 90.678 187.452 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "54ae69d9-a4ae-4d01-ac76-38c62190138e")
-	)
 	(text "LED-Driver PCB"
 		(exclude_from_sim no)
 		(at 55.118 23.368 0)
@@ -8541,6 +8531,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 200.66 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4402559e-fdea-4e08-a454-b35f1d6e1bae")
 		)
@@ -9041,6 +9039,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 200.66 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7cdd46e8-9c2c-46eb-af9a-9cdf87fe393c")
 		)
@@ -9389,7 +9395,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part #" "C5184132"
+		(property "JLCPCB Part #" " C25804"
 			(at 73.66 74.93 0)
 			(effects
 				(font
@@ -10008,6 +10014,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C1590"
+			(at 180.34 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "58c822d8-7cc4-4261-ba06-30d646d8fe6d")
 		)
@@ -10295,6 +10309,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C21189"
+			(at 200.66 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -12157,6 +12179,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 200.66 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "482871b8-8b75-49b0-831f-23111a3d8c7a")
 		)
@@ -12222,6 +12252,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C21189"
+			(at 200.66 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12437,6 +12475,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" " C25804"
+			(at 142.24 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12714,6 +12760,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" " C25804"
+			(at 132.08 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13498,6 +13552,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 200.66 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a58165bd-daae-461a-bb77-2e7e470c026e")
 		)
@@ -14009,6 +14071,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C21189"
+			(at 200.66 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -15616,6 +15686,14 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 200.66 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c327af33-9e8f-48a2-afcf-eb6e385ef374")
 		)
@@ -16497,6 +16575,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C484743"
+			(at 165.1 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "6"
