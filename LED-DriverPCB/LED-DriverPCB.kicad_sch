@@ -9770,7 +9770,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "27275d38-cd56-48c9-b799-286fa86997e0")
-		(property "Reference" "TP7"
+		(property "Reference" "TP2"
 			(at 223.52 217.17 0)
 			(effects
 				(font
@@ -9822,7 +9822,7 @@
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
-					(reference "TP7")
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -10046,7 +10046,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f8d6ec7-3be0-46ad-8ea8-71d9d97df25d")
-		(property "Reference" "TP2"
+		(property "Reference" "TP7"
 			(at 213.36 207.01 0)
 			(effects
 				(font
@@ -10098,7 +10098,7 @@
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
-					(reference "TP2")
+					(reference "TP7")
 					(unit 1)
 				)
 			)
@@ -11281,7 +11281,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "618bc4d0-0e3a-4f52-a4bd-58da9e3c69e6")
-		(property "Reference" "TP4"
+		(property "Reference" "TP5"
 			(at 218.44 212.09 0)
 			(effects
 				(font
@@ -11333,7 +11333,7 @@
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
-					(reference "TP4")
+					(reference "TP5")
 					(unit 1)
 				)
 			)
@@ -12364,7 +12364,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8e05529d-8abe-404b-9b5c-84316b70831f")
-		(property "Reference" "TP5"
+		(property "Reference" "TP4"
 			(at 228.6 222.25 0)
 			(effects
 				(font
@@ -12416,7 +12416,7 @@
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
-					(reference "TP5")
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -14588,7 +14588,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c62c7def-10b3-4cc4-b7e1-727aa7e40feb")
-		(property "Reference" "TP8"
+		(property "Reference" "TP1"
 			(at 220.98 214.63 0)
 			(effects
 				(font
@@ -14640,7 +14640,7 @@
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
-					(reference "TP8")
+					(reference "TP1")
 					(unit 1)
 				)
 			)
@@ -14871,7 +14871,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d6ddc7a2-cff0-4bb8-af19-8f71b37a089e")
-		(property "Reference" "TP3"
+		(property "Reference" "TP6"
 			(at 215.9 209.55 0)
 			(effects
 				(font
@@ -14923,7 +14923,7 @@
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
-					(reference "TP3")
+					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -15380,7 +15380,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e393f20e-15df-446a-a4a7-637052c8ca22")
-		(property "Reference" "TP1"
+		(property "Reference" "TP8"
 			(at 210.82 204.47 0)
 			(effects
 				(font
@@ -15432,7 +15432,7 @@
 		(instances
 			(project ""
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
-					(reference "TP1")
+					(reference "TP8")
 					(unit 1)
 				)
 			)
@@ -15799,7 +15799,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "edf674e6-737a-40a9-a1c4-78045f1617da")
-		(property "Reference" "TP6"
+		(property "Reference" "TP3"
 			(at 226.06 219.71 0)
 			(effects
 				(font
@@ -15851,7 +15851,7 @@
 		(instances
 			(project "LED-DriverPCB"
 				(path "/f8915909-606a-4747-b712-208c2aaca226"
-					(reference "TP6")
+					(reference "TP3")
 					(unit 1)
 				)
 			)

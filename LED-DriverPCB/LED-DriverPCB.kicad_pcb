@@ -283,6 +283,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "73ec62b8-b9ba-4d7c-8b3c-36b4e151588c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/7c490af1-198a-4c07-a07a-5877907aca23")
 		(sheetname "/")
@@ -482,6 +495,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" " C25804"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f4d7340c-f15a-4d02-8bab-0b9e9c4e4a02")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/99ba3ef5-1727-45df-a69f-05c1b68166a3")
 		(sheetname "/")
@@ -677,6 +703,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C484743"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5c36cd74-6f80-4f9b-89f9-d8de083321c8")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -1630,6 +1669,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C21189"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d4e997f1-e507-495e-94ec-6c73b8f02118")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -4893,10 +4945,10 @@
 	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
 		(layer "F.Cu")
 		(uuid "4ddbb67b-30be-40a9-9932-0f7234e1c022")
-		(at 216.879 153.959)
+		(at 258.229 153.959)
 		(descr "SMD rectangular pad as test Point, square 1.0mm side length")
 		(tags "test point SMD pad rectangle square")
-		(property "Reference" "TP1"
+		(property "Reference" "TP8"
 			(at -2.85 -0.925 0)
 			(layer "F.SilkS")
 			(uuid "6ba7d756-7dab-46b0-9dff-7b2227334ef1")
@@ -5218,10 +5270,10 @@
 	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
 		(layer "F.Cu")
 		(uuid "4ee5a81d-c184-4aa1-a568-837683d21282")
-		(at 251.495667 157.659)
+		(at 210.445667 157.659)
 		(descr "SMD rectangular pad as test Point, square 1.0mm side length")
 		(tags "test point SMD pad rectangle square")
-		(property "Reference" "TP6"
+		(property "Reference" "TP3"
 			(at -2.733333 -0.833333 0)
 			(layer "F.SilkS")
 			(uuid "f7828804-5984-41a9-a881-bc7cfb2c69a0")
@@ -5424,6 +5476,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C21189"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "951c74f8-071d-46ef-8823-6bcaa4c2c917")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -5855,10 +5920,10 @@
 	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
 		(layer "F.Cu")
 		(uuid "60ae3adb-9958-4d2b-9c12-93c40cda9c11")
-		(at 213.662333 155.809)
+		(at 254.862333 155.809)
 		(descr "SMD rectangular pad as test Point, square 1.0mm side length")
 		(tags "test point SMD pad rectangle square")
-		(property "Reference" "TP2"
+		(property "Reference" "TP7"
 			(at -2.833333 -0.908333 0)
 			(layer "F.SilkS")
 			(uuid "73a1ca9c-bb8f-4891-b34a-885038717704")
@@ -7817,6 +7882,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6953a1d8-5032-4663-8015-95a88e207322")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/af48c5a4-1372-4ece-8e29-b15b42397b16")
 		(sheetname "/")
@@ -8258,6 +8336,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6810302e-301c-49f7-9f62-87606673bdf1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/81cbaef7-00ec-4d4e-b4e5-c004f7ad8e30")
 		(sheetname "/")
@@ -8408,10 +8499,10 @@
 	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
 		(layer "F.Cu")
 		(uuid "7079d5cb-e76f-498b-9b01-db8fdf94885e")
-		(at 258.229 153.959)
+		(at 216.879 153.959)
 		(descr "SMD rectangular pad as test Point, square 1.0mm side length")
 		(tags "test point SMD pad rectangle square")
-		(property "Reference" "TP8"
+		(property "Reference" "TP1"
 			(at -2.8 -0.85 0)
 			(layer "F.SilkS")
 			(uuid "7b271e0f-21da-4bd1-b52b-7b2ab375b944")
@@ -8614,6 +8705,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part #" " C25804"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "76431ab9-d05e-4861-acaf-b5a685fc14f1")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -9311,7 +9415,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C5184132"
+		(property "JLCPCB Part #" " C25804"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9519,6 +9623,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C1590"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f6e390a5-9c35-4958-bd0d-8b7a037cb0f5")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -11413,6 +11530,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e4144bf-5fa9-45fe-a5f4-2297c092eb56")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/3e40708b-de1e-4ea5-8011-022a21db9ac8")
 		(sheetname "/")
@@ -11563,10 +11693,10 @@
 	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
 		(layer "F.Cu")
 		(uuid "95f5fe5f-2f7f-457f-8781-896af39c1883")
-		(at 254.862333 155.809)
+		(at 213.662333 155.809)
 		(descr "SMD rectangular pad as test Point, square 1.0mm side length")
 		(tags "test point SMD pad rectangle square")
-		(property "Reference" "TP7"
+		(property "Reference" "TP2"
 			(at -2.766667 -0.866667 0)
 			(layer "F.SilkS")
 			(uuid "675ad3bb-6a5b-46b3-86fb-804eb31fcf34")
@@ -12818,10 +12948,10 @@
 	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
 		(layer "F.Cu")
 		(uuid "9b2b22aa-092a-4e1f-8fd7-ce68c052035e")
-		(at 207.229 159.509)
+		(at 248.104 159.509)
 		(descr "SMD rectangular pad as test Point, square 1.0mm side length")
 		(tags "test point SMD pad rectangle square")
-		(property "Reference" "TP4"
+		(property "Reference" "TP5"
 			(at -2.8 -0.875 0)
 			(layer "F.SilkS")
 			(uuid "dde934e4-7ecb-45e7-9724-5dd22387cab8")
@@ -12979,10 +13109,10 @@
 	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
 		(layer "F.Cu")
 		(uuid "9ec6a4e5-a7ba-42e5-bf4c-9753e95eb6ab")
-		(at 210.445667 157.659)
+		(at 251.495667 157.659)
 		(descr "SMD rectangular pad as test Point, square 1.0mm side length")
 		(tags "test point SMD pad rectangle square")
-		(property "Reference" "TP3"
+		(property "Reference" "TP6"
 			(at -2.816667 -0.891667 0)
 			(layer "F.SilkS")
 			(uuid "9ed91f2b-ef6e-45f8-bd69-7deac5556a13")
@@ -13566,6 +13696,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C21189"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e2ffedf-2d10-41e5-b611-16b151ab649a")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -15880,6 +16023,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part #" "C21189"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b3be63e0-beee-4af1-9bb1-44a9a120d57d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/109cfc6d-59e6-4fa8-837f-973a886fa57b")
 		(sheetname "/")
@@ -16030,10 +16186,10 @@
 	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
 		(layer "F.Cu")
 		(uuid "eee83407-ea93-4a26-b8dc-b903ee95a61b")
-		(at 248.104 159.509)
+		(at 207.229 159.509)
 		(descr "SMD rectangular pad as test Point, square 1.0mm side length")
 		(tags "test point SMD pad rectangle square")
-		(property "Reference" "TP5"
+		(property "Reference" "TP4"
 			(at -2.7 -0.8 0)
 			(layer "F.SilkS")
 			(uuid "15dbac32-6348-4854-864a-0ec23ccfb548")
@@ -21599,6 +21755,14 @@
 		(uuid "0246b005-491e-4c66-9de2-114509f4504f")
 	)
 	(segment
+		(start 232.404 151.959)
+		(end 232.404 150.959)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "0e956bbf-ad30-46c7-b8e3-0446d3aab854")
+	)
+	(segment
 		(start 232.404 153.234)
 		(end 232.404 151.959)
 		(width 0.5)
@@ -21613,6 +21777,14 @@
 		(layer "F.Cu")
 		(net 73)
 		(uuid "1d132afc-3b85-4911-b526-cff3ad0eb967")
+	)
+	(segment
+		(start 234.779 150.659)
+		(end 234.979 150.459)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "20512a3e-fa36-41f3-a12a-0597a7983c3e")
 	)
 	(segment
 		(start 344.160251 144.441)
@@ -21647,14 +21819,6 @@
 		(uuid "2f52c0aa-e0e9-4898-ac8f-871cefded21d")
 	)
 	(segment
-		(start 238.379 151.041)
-		(end 239.029 151.041)
-		(width 0.5)
-		(layer "F.Cu")
-		(net 73)
-		(uuid "3d5b359e-7175-4418-8675-cf7f67f5d4f9")
-	)
-	(segment
 		(start 241.029 151.491)
 		(end 243.611 151.491)
 		(width 0.5)
@@ -21663,12 +21827,28 @@
 		(uuid "3df3f3a0-c3d0-473e-a853-e3fb05aeec66")
 	)
 	(segment
+		(start 239.761 151.491)
+		(end 241.029 151.491)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "4484994a-c364-465d-a8c6-094ba26e5030")
+	)
+	(segment
 		(start 344.660251 136.891)
 		(end 343.860251 136.091)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
 		(uuid "46edfe3e-5ff0-443c-8c57-9815683a6ad5")
+	)
+	(segment
+		(start 234.979 150.034)
+		(end 235.221 149.792)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "495d5b00-93da-4778-8268-352a858b4fca")
 	)
 	(segment
 		(start 335.084251 138.5379)
@@ -21695,12 +21875,28 @@
 		(uuid "5983827f-3373-401e-a983-7592f064df55")
 	)
 	(segment
+		(start 237.186 151.041)
+		(end 238.379 151.041)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "5b2f9200-a889-4f10-aa70-558b63268e5b")
+	)
+	(segment
 		(start 333.829 152.159)
 		(end 335.084251 150.903749)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
 		(uuid "5c4d8295-98d3-4d67-813e-317ff1503a39")
+	)
+	(segment
+		(start 236.929 150.784)
+		(end 237.186 151.041)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "65117b3e-d33d-4724-8b53-ce7babb42680")
 	)
 	(segment
 		(start 335.084251 144.441)
@@ -21735,12 +21931,36 @@
 		(uuid "729074ea-34f2-4a65-9e3e-85de0fcb40cc")
 	)
 	(segment
+		(start 239.311 151.041)
+		(end 239.761 151.491)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "806fb9ed-d30e-4740-afc6-035fed0b4372")
+	)
+	(segment
+		(start 234.979 150.459)
+		(end 234.979 150.034)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "85119885-1892-4e11-916c-1fccf11e8620")
+	)
+	(segment
 		(start 243.611 151.491)
 		(end 244.279 152.159)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
 		(uuid "877b995e-e0d5-411f-be87-c7daba1bc617")
+	)
+	(segment
+		(start 236.929 150.092)
+		(end 236.929 150.784)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "87d7dbd2-5953-4353-bb49-e99ade432a83")
 	)
 	(segment
 		(start 342.873532 140.441)
@@ -21751,20 +21971,20 @@
 		(uuid "a4140230-b224-4047-9a12-5df7a8b6a671")
 	)
 	(segment
+		(start 232.404 150.959)
+		(end 232.704 150.659)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "a8a35ab2-aee4-4c22-86ee-03ba92c161c9")
+	)
+	(segment
 		(start 344.660251 143.941)
 		(end 344.660251 139.291)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
 		(uuid "aa6333a9-f830-4cc9-a824-5e8f5b7d4551")
-	)
-	(segment
-		(start 239.479 151.491)
-		(end 241.029 151.491)
-		(width 0.5)
-		(layer "F.Cu")
-		(net 73)
-		(uuid "bc11b21e-a512-43cb-b0d0-c0983a32c6e4")
 	)
 	(segment
 		(start 343.523532 139.791001)
@@ -21775,14 +21995,6 @@
 		(uuid "bd0ca2b8-306f-459b-83ec-9c6007bfeccf")
 	)
 	(segment
-		(start 239.029 151.041)
-		(end 239.479 151.491)
-		(width 0.5)
-		(layer "F.Cu")
-		(net 73)
-		(uuid "bfb9c5e5-56dd-4d63-bb51-3b05da3212df")
-	)
-	(segment
 		(start 342.015251 135.541)
 		(end 342.873532 135.541)
 		(width 0.3)
@@ -21791,12 +22003,44 @@
 		(uuid "ca96d6d6-f839-40cb-8647-c01d2ba8dc59")
 	)
 	(segment
+		(start 235.221 149.792)
+		(end 236.629 149.792)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "caaa7212-a904-4caf-8714-c78f8da98c6f")
+	)
+	(segment
+		(start 238.379 151.041)
+		(end 239.311 151.041)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "d468eff2-6d12-4e06-93b7-4444f7c2d22b")
+	)
+	(segment
 		(start 244.279 152.159)
 		(end 333.829 152.159)
 		(width 0.5)
 		(layer "F.Cu")
 		(net 73)
 		(uuid "d9f164a4-8dbe-436d-b47f-f91e71ece460")
+	)
+	(segment
+		(start 236.629 149.792)
+		(end 236.929 150.092)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "e94ba5fb-d32b-464b-b2ba-2c0a3e3d3ba5")
+	)
+	(segment
+		(start 232.704 150.659)
+		(end 234.779 150.659)
+		(width 0.5)
+		(layer "F.Cu")
+		(net 73)
+		(uuid "f9074bfb-fbed-4ac4-9d19-32016da47ba9")
 	)
 	(segment
 		(start 343.860251 136.091)
