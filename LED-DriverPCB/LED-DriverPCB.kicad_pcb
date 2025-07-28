@@ -138,7 +138,7 @@
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "Manufacturing/Gerbers/")
+			(outputdirectory "Manufacturing/Rev B/Gerbers/")
 		)
 	)
 	(net 0 "")
