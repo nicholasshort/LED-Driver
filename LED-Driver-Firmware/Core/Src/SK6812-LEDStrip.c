@@ -6,90 +6,71 @@
  */
 
 #include "SK6812-LEDStrip.h"
+#include <string.h>
 
-SK6812_DATA_RGB SK6812_LEDSTRIP_DATA[SK6812_NUM_LEDS];
+// Sending bits at 800kHz, duty cycle measured from 0-90 (0%-100%)
+#define SK6812_T0H_VAL 		22 // 0.3us
+#define SK6812_T1H_VAL 		43 // 0.6us
 
-uint8_t	SK6812_DMA_BUF[SK6812_DMA_BUF_LEN];
+HAL_StatusTypeDef SK6812_Init(
+		SK6812_HandleTypeDef* stripHandle,
+		TIM_HandleTypeDef* timer,
+		uint32_t channel,
+		uint8_t* dma_buf,
+		uint16_t dma_buf_len,
+		SK6812_DATA_RGB* led_data,
+		uint16_t num_leds
+) {
 
-volatile uint8_t SK6812_DMA_COMPLETE_FLAG;
+	stripHandle->timer        = timer;
+	stripHandle->channel      = channel;
+	stripHandle->dma_buf      = dma_buf;
+	stripHandle->dma_buf_len  = dma_buf_len;
+	stripHandle->led_data     = led_data;
+	stripHandle->num_leds     = num_leds;
+	stripHandle->dma_done_flag     = 1;
 
+	memset(stripHandle->dma_buf, 0, stripHandle->dma_buf_len);
 
-HAL_StatusTypeDef SK6812_Init() {
-
-	HAL_StatusTypeDef ret = HAL_TIM_PWM_Init(&SK6812_TIM);
-
-	for (uint16_t i = 0; i < SK6812_DMA_BUF_LEN; i++) {
-
-		SK6812_DMA_BUF[i] = 0;
-
-	}
-
-	SK6812_DMA_COMPLETE_FLAG = 1;
-
-	return ret;
-
-}
-
-void SK6812_SetColour(uint8_t index, uint8_t red, uint8_t green, uint8_t blue) {
-
-	SK6812_LEDSTRIP_DATA[index].colour.red = red;
-	SK6812_LEDSTRIP_DATA[index].colour.green = green;
-	SK6812_LEDSTRIP_DATA[index].colour.blue = blue;
+	return HAL_TIM_PWM_Init(timer);
 
 }
 
-HAL_StatusTypeDef SK6812_Update() {
 
-	if (!SK6812_DMA_COMPLETE_FLAG) {
+void SK6812_SetColour(SK6812_HandleTypeDef* stripHandle, uint16_t index, uint8_t red, uint8_t green, uint8_t blue) {
 
-		return HAL_BUSY;
-
-	}
-
-	uint16_t bufIndex = 0;
-
-	for (uint8_t ledIndex = 0; ledIndex < SK6812_NUM_LEDS; ledIndex++) {
-
-		uint8_t transmitBitIndex = 0;
-
-		for (uint8_t bitIndex = 0; bitIndex < SK6812_BITS_PER_LED; bitIndex++) {
-
-			transmitBitIndex = (7 - (bitIndex % 8)) + ((bitIndex / 8) * 8);
-
-			if ((SK6812_LEDSTRIP_DATA[ledIndex].data >> transmitBitIndex) & 0x01) {
-
-				SK6812_DMA_BUF[bufIndex] = SK6812_T1H_VAL;
-
-			} else {
-
-				SK6812_DMA_BUF[bufIndex] = SK6812_T0H_VAL;
-
-			}
-
-			bufIndex++;
-
-		}
-
-	}
-
-	// 80us reset period from Init function's 0s
-
-	HAL_StatusTypeDef ret = HAL_TIM_PWM_Start_DMA(&SK6812_TIM, SK6812_TIM_CHANNEL, (uint32_t*)SK6812_DMA_BUF, SK6812_DMA_BUF_LEN);
-
-	if (ret == HAL_OK) {
-
-		SK6812_DMA_COMPLETE_FLAG = 0;
-
-	}
-
-	return ret;
+	if (index >= stripHandle->num_leds) return;
+	stripHandle->led_data[index].colour.red = red;
+	stripHandle->led_data[index].colour.green = green;
+	stripHandle->led_data[index].colour.blue = blue;
 
 }
 
-void SK6812_Callback() {
 
-	HAL_TIM_PWM_Stop_DMA(&SK6812_TIM, SK6812_TIM_CHANNEL);
+HAL_StatusTypeDef SK6812_Update(SK6812_HandleTypeDef* stripHandle) {
 
-	SK6812_DMA_COMPLETE_FLAG = 1;
+    if (!stripHandle->dma_done_flag) return HAL_BUSY;
+
+    uint16_t buf_idx = 0;
+    for (uint16_t led = 0; led < stripHandle->num_leds; led++) {
+        for (uint8_t bit = 0; bit < SK6812_BITS_PER_LED; bit++) {
+            uint8_t bit_pos = (7 - (bit % 8)) + ((bit / 8) * 8);
+            uint8_t val = ((stripHandle->led_data[led].data >> bit_pos) & 0x01) ? SK6812_T1H_VAL : SK6812_T0H_VAL;
+            stripHandle->dma_buf[buf_idx++] = val;
+        }
+    }
+
+    if (HAL_TIM_PWM_Start_DMA(stripHandle->timer, stripHandle->channel, (uint32_t*)stripHandle->dma_buf, stripHandle->dma_buf_len) == HAL_OK) {
+        stripHandle->dma_done_flag = 0;
+        return HAL_OK;
+    }
+    return HAL_ERROR;
+
+}
+
+void SK6812_DMACompleteCallback(SK6812_HandleTypeDef* stripHandle) {
+
+    HAL_TIM_PWM_Stop_DMA(stripHandle->timer, stripHandle->channel);
+    stripHandle->dma_done_flag = 1;
 
 }

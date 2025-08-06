@@ -50,15 +50,24 @@ DMA_HandleTypeDef hdma_tim3_ch4_up;
 DMA_HandleTypeDef hdma_tim5_ch2;
 DMA_HandleTypeDef hdma_tim5_ch3_up;
 DMA_HandleTypeDef hdma_tim5_ch4_trig;
+DMA_HandleTypeDef hdma_tim5_ch1;
 DMA_HandleTypeDef hdma_tim8_ch1;
 
 /* USER CODE BEGIN PV */
+
+// -- USB --
 uint8_t	 	usbTxBuf[USB_BUFLEN];
 uint16_t 	usbTxBufLen;
 
 uint8_t 	usbRxBuf[USB_BUFLEN];
 uint16_t 	usbRxBufLen;
 uint8_t  	usbRxFlag = 0;
+
+// -- LED Strips --
+SK6812_HandleTypeDef strip1;
+SK6812_DATA_RGB led_data1[SK6812_NUM_LEDS];
+uint8_t dma_buf1[SK6812_DMA_BUF_LEN(SK6812_NUM_LEDS)];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -76,7 +85,9 @@ static void MX_TIM3_Init(void);
 /* USER CODE BEGIN 0 */
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 
-	SK6812_Callback();
+	if (htim == strip1.timer) {
+		SK6812_DMACompleteCallback(&strip1);
+	}
 
 }
 
@@ -124,7 +135,7 @@ int main(void)
   MX_TIM3_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-  SK6812_Init();
+  SK6812_Init(&strip1, &htim5, TIM_CHANNEL_1, dma_buf1, SK6812_DMA_BUF_LEN(SK6812_NUM_LEDS), led_data1, SK6812_NUM_LEDS);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -139,9 +150,9 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		for (uint8_t i = 0; i < SK6812_NUM_LEDS; i++) {
 			if (i == led)
-				SK6812_SetColour(i, 235, 52, 232);
+				SK6812_SetColour(&strip1, i, 235, 52, 232);
 			else
-				SK6812_SetColour(i, 0, 0, 0);
+				SK6812_SetColour(&strip1, i, 0, 0, 0);
 		}
 		if (direction == 0)
 			led++;
@@ -155,7 +166,7 @@ int main(void)
 			led = 0;
 			direction = 0;
 		}
-		SK6812_Update();
+		SK6812_Update(&strip1);
 
 		if (usbRxFlag && usbRxBufLen) {
 
@@ -168,9 +179,7 @@ int main(void)
 
 		}
 
-//		CDC_Transmit_FS("Hello World\n", 13);
-
-		HAL_Delay(500);
+		HAL_Delay(10);
   }
   /* USER CODE END 3 */
 }

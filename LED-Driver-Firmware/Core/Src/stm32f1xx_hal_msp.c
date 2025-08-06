@@ -35,6 +35,8 @@ extern DMA_HandleTypeDef hdma_tim5_ch3_up;
 
 extern DMA_HandleTypeDef hdma_tim5_ch4_trig;
 
+extern DMA_HandleTypeDef hdma_tim5_ch1;
+
 extern DMA_HandleTypeDef hdma_tim8_ch1;
 
 /* Private typedef -----------------------------------------------------------*/
@@ -237,6 +239,22 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* htim_pwm)
     __HAL_LINKDMA(htim_pwm,hdma[TIM_DMA_ID_CC4],hdma_tim5_ch4_trig);
     __HAL_LINKDMA(htim_pwm,hdma[TIM_DMA_ID_TRIGGER],hdma_tim5_ch4_trig);
 
+    /* TIM5_CH1 Init */
+    hdma_tim5_ch1.Instance = DMA2_Channel5;
+    hdma_tim5_ch1.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_tim5_ch1.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_tim5_ch1.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_tim5_ch1.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
+    hdma_tim5_ch1.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+    hdma_tim5_ch1.Init.Mode = DMA_NORMAL;
+    hdma_tim5_ch1.Init.Priority = DMA_PRIORITY_LOW;
+    if (HAL_DMA_Init(&hdma_tim5_ch1) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(htim_pwm,hdma[TIM_DMA_ID_CC1],hdma_tim5_ch1);
+
     /* USER CODE BEGIN TIM5_MspInit 1 */
 
     /* USER CODE END TIM5_MspInit 1 */
@@ -388,6 +406,7 @@ void HAL_TIM_PWM_MspDeInit(TIM_HandleTypeDef* htim_pwm)
     HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_UPDATE]);
     HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_CC4]);
     HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_TRIGGER]);
+    HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_CC1]);
     /* USER CODE BEGIN TIM5_MspDeInit 1 */
 
     /* USER CODE END TIM5_MspDeInit 1 */
