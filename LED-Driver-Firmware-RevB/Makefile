@@ -42,6 +42,7 @@ OPENOCD_TARGET = target/stm32f1x.cfg
 C_SOURCES =  \
 Core/Src/main.c \
 Core/Src/SK6812-LEDStrip.c \
+Core/Src/LEDStrip_Manager.c \
 Core/Src/stm32f1xx_it.c \
 Core/Src/stm32f1xx_hal_msp.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c \

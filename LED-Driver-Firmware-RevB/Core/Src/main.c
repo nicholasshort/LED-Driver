@@ -56,11 +56,6 @@ PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN PV */
 
-// -- LED Strips --
-SK6812_HandleTypeDef strip1;
-SK6812_DATA_RGB led_data1[SK6812_NUM_LEDS];
-uint8_t dma_buf1[SK6812_DMA_BUF_LEN(SK6812_NUM_LEDS)];
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,8 +74,47 @@ static void MX_USB_PCD_Init(void);
 /* USER CODE BEGIN 0 */
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 
-	if (htim == strip1.timer) {
-		SK6812_DMACompleteCallback(&strip1);
+	if (htim == &htim3) {
+		switch (htim->Channel) {
+			case HAL_TIM_ACTIVE_CHANNEL_1:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_4));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_3:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_2));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_4:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_1));
+				break;
+			default:
+				break;
+		}
+	}
+	else if (htim == &htim5) {
+		switch (htim->Channel) {
+			case HAL_TIM_ACTIVE_CHANNEL_1:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_8));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_2:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_7));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_3:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_6));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_4:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_5));
+				break;
+			default:
+				break;
+		}
+	}
+	else if (htim == &htim8) {
+		switch (htim->Channel) {
+			case HAL_TIM_ACTIVE_CHANNEL_1:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_3));
+				break;
+			default:
+				break;
+		}
 	}
 
 }
@@ -92,79 +126,67 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
   */
 int main(void)
 {
+	/* USER CODE BEGIN 1 */
 
-  /* USER CODE BEGIN 1 */
+	/* USER CODE END 1 */
 
-  /* USER CODE END 1 */
+	/* MCU Configuration--------------------------------------------------------*/
 
-  /* MCU Configuration--------------------------------------------------------*/
+	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+	HAL_Init();
 
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+	/* USER CODE BEGIN Init */
 
-  /* USER CODE BEGIN Init */
+	/* USER CODE END Init */
 
-  /* USER CODE END Init */
+	/* Configure the system clock */
+	SystemClock_Config();
 
-  /* Configure the system clock */
-  SystemClock_Config();
+	/* USER CODE BEGIN SysInit */
 
-  /* USER CODE BEGIN SysInit */
+	/* USER CODE END SysInit */
 
-  /* USER CODE END SysInit */
+	/* Initialize all configured peripherals */
+	MX_GPIO_Init();
+	MX_DMA_Init();
+	MX_TIM3_Init();
+	MX_TIM5_Init();
+	MX_TIM8_Init();
+	MX_USB_PCD_Init();
+	/* USER CODE BEGIN 2 */
+	LEDStrip_Manager_Init();
+	/* USER CODE END 2 */
 
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_DMA_Init();
-  MX_TIM3_Init();
-  MX_TIM5_Init();
-  MX_TIM8_Init();
-  MX_USB_PCD_Init();
-  /* USER CODE BEGIN 2 */
-  SK6812_Init(&strip1, &htim5, TIM_CHANNEL_1, dma_buf1, SK6812_DMA_BUF_LEN(SK6812_NUM_LEDS), led_data1, SK6812_NUM_LEDS);
-  /* USER CODE END 2 */
+	/* Infinite loop */
+	/* USER CODE BEGIN WHILE */
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  #define NUM_STAGES 4
+	
 
-int led = 0;               // signed: we'll compare to 0
-int stage = 0;             // 0 .. NUM_STAGES-1
-int led_dir = 1;           // +1 forward, -1 backward
-int stage_dir = 1;         // +1 up, -1 down
+	while (1) {
 
-while (1) {
-    // compute current segment length (>=1)
-    int denom = NUM_STAGES - stage;           // 1..NUM_STAGES
-    int segment_len = SK6812_NUM_LEDS / denom;
-    if (segment_len < 1) segment_len = 1;
+		for (int strip = 0; strip < LEDSTRIP_COUNT; strip++) {
 
-    // draw: one LED on, rest off
-    for (int j = 0; j < segment_len; j++) {
-        if (j == led)  SK6812_SetColour(&strip1, j, 0, 100, 0);
-        else            SK6812_SetColour(&strip1, j, 0, 0, 0);
-    }
-    // (optional) clear LEDs beyond segment_len
-    for (int j = segment_len; j < SK6812_NUM_LEDS; j++) {
-        SK6812_SetColour(&strip1, j, 0, 0, 0);
-    }
+			SK6812_HandleTypeDef* strip_handle = LEDStrip_Manager_Get_Strip_Handle(strip);
 
-    // move LED within segment
-    led += led_dir;
-    if (led >= segment_len - 1) { led = segment_len - 1; led_dir = -1; }
-    if (led <= 0) {
-        led = 0;
-        led_dir = +1;
+			for (int led = 0; led < SK6812_NUM_LEDS; led++) {
 
-        // advance stage when we hit the start
-        stage += stage_dir;
-        if (stage >= NUM_STAGES - 1) { stage = NUM_STAGES - 1; stage_dir = -1; }
-        if (stage <= 0)               { stage = 0;               stage_dir = +1; }
-    }
+				SK6812_SetColour(strip_handle, led, 255, 255, 255);
+				SK6812_Update(strip_handle);
+				HAL_Delay(10);
+			}
 
-    SK6812_Update(&strip1);
-    HAL_Delay(10);
-  }
+			HAL_Delay(5000);
+
+			for (int led = 0; led < SK6812_NUM_LEDS; led++) {
+
+				SK6812_SetColour(strip_handle, led, 0, 0, 0);
+				SK6812_Update(strip_handle);
+				HAL_Delay(10);
+			}
+
+		}
+
+	}
   /* USER CODE END 3 */
 }
 

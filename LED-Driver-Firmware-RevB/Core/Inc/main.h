@@ -32,6 +32,7 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "SK6812-LEDStrip.h"
+#include "LEDStrip_Manager.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
