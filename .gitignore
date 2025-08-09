@@ -82,3 +82,5 @@ fp-info-cache
 *.dsn
 *.ses
 
+# Firmware build files
+LED-Driver-Firmware-RevB/build/
