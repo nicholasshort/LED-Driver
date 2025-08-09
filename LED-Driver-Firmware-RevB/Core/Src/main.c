@@ -56,6 +56,11 @@ PCD_HandleTypeDef hpcd_USB_FS;
 
 /* USER CODE BEGIN PV */
 
+// -- LED Strips --
+SK6812_HandleTypeDef strip1;
+SK6812_DATA_RGB led_data1[SK6812_NUM_LEDS];
+uint8_t dma_buf1[SK6812_DMA_BUF_LEN(SK6812_NUM_LEDS)];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -72,7 +77,13 @@ static void MX_USB_PCD_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 
+	if (htim == strip1.timer) {
+		SK6812_DMACompleteCallback(&strip1);
+	}
+
+}
 /* USER CODE END 0 */
 
 /**
@@ -110,16 +121,49 @@ int main(void)
   MX_TIM8_Init();
   MX_USB_PCD_Init();
   /* USER CODE BEGIN 2 */
-
+  SK6812_Init(&strip1, &htim5, TIM_CHANNEL_1, dma_buf1, SK6812_DMA_BUF_LEN(SK6812_NUM_LEDS), led_data1, SK6812_NUM_LEDS);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-    HAL_Delay(100);
-    /* USER CODE BEGIN 3 */
+  #define NUM_STAGES 4
+
+int led = 0;               // signed: we'll compare to 0
+int stage = 0;             // 0 .. NUM_STAGES-1
+int led_dir = 1;           // +1 forward, -1 backward
+int stage_dir = 1;         // +1 up, -1 down
+
+while (1) {
+    // compute current segment length (>=1)
+    int denom = NUM_STAGES - stage;           // 1..NUM_STAGES
+    int segment_len = SK6812_NUM_LEDS / denom;
+    if (segment_len < 1) segment_len = 1;
+
+    // draw: one LED on, rest off
+    for (int j = 0; j < segment_len; j++) {
+        if (j == led)  SK6812_SetColour(&strip1, j, 0, 100, 0);
+        else            SK6812_SetColour(&strip1, j, 0, 0, 0);
+    }
+    // (optional) clear LEDs beyond segment_len
+    for (int j = segment_len; j < SK6812_NUM_LEDS; j++) {
+        SK6812_SetColour(&strip1, j, 0, 0, 0);
+    }
+
+    // move LED within segment
+    led += led_dir;
+    if (led >= segment_len - 1) { led = segment_len - 1; led_dir = -1; }
+    if (led <= 0) {
+        led = 0;
+        led_dir = +1;
+
+        // advance stage when we hit the start
+        stage += stage_dir;
+        if (stage >= NUM_STAGES - 1) { stage = NUM_STAGES - 1; stage_dir = -1; }
+        if (stage <= 0)               { stage = 0;               stage_dir = +1; }
+    }
+
+    SK6812_Update(&strip1);
+    HAL_Delay(10);
   }
   /* USER CODE END 3 */
 }
