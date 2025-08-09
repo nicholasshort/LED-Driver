@@ -84,3 +84,6 @@ fp-info-cache
 
 # Firmware build files
 LED-Driver-Firmware-RevB/build/
+
+# VSCode config files
+LED-Driver-Firmware-RevB/.vscode/
