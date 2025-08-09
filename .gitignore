@@ -87,3 +87,6 @@ LED-Driver-Firmware-RevB/build/
 
 # VSCode config files
 LED-Driver-Firmware-RevB/.vscode/
+
+# Mac .DS_Store
+.DS_Store
