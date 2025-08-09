@@ -207,7 +207,27 @@ clean:
 flash: all
 	openocd -f $(OPENOCD_INTERFACE) -f $(OPENOCD_TARGET) -c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
 	
-  
+#######################################
+# debugging via gdb and openocd
+#######################################
+
+debug: all
+	@echo "[DEBUG] Starting OpenOCD in background..."
+	openocd -f $(OPENOCD_INTERFACE) -f $(OPENOCD_TARGET) \
+		-c "adapter speed 4000" \
+		-c "init; reset halt" & \
+	OCD_PID=$$!; \
+	sleep 1; \
+	echo "[DEBUG] Launching GDB and connecting..."; \
+	arm-none-eabi-gdb $(BUILD_DIR)/$(TARGET).elf \
+		-ex "target extended-remote :3333" \
+		-ex "monitor reset halt" \
+		-ex "load" \
+		-ex "break main" \
+		-ex "continue"; \
+	echo "[DEBUG] Stopping OpenOCD..."; \
+	kill $$OCD_PID
+
 #######################################
 # dependencies
 #######################################
