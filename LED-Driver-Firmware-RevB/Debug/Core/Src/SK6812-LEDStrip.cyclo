@@ -1,4 +1,0 @@
-../Core/Src/SK6812-LEDStrip.c:15:19:SK6812_Init	1
-../Core/Src/SK6812-LEDStrip.c:40:6:SK6812_SetColour	2
-../Core/Src/SK6812-LEDStrip.c:50:19:SK6812_Update	6
-../Core/Src/SK6812-LEDStrip.c:71:6:SK6812_DMACompleteCallback	1
