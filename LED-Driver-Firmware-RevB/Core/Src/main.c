@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -52,8 +53,6 @@ DMA_HandleTypeDef hdma_tim5_ch3_up;
 DMA_HandleTypeDef hdma_tim5_ch4_trig;
 DMA_HandleTypeDef hdma_tim8_ch1;
 
-PCD_HandleTypeDef hpcd_USB_FS;
-
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -65,7 +64,6 @@ static void MX_DMA_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM5_Init(void);
 static void MX_TIM8_Init(void);
-static void MX_USB_PCD_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -126,81 +124,46 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
   */
 int main(void)
 {
-	/* USER CODE BEGIN 1 */
 
-	/* USER CODE END 1 */
+  /* USER CODE BEGIN 1 */
 
-	/* MCU Configuration--------------------------------------------------------*/
+  /* USER CODE END 1 */
 
-	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-	HAL_Init();
+  /* MCU Configuration--------------------------------------------------------*/
 
-	/* USER CODE BEGIN Init */
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
 
-	/* USER CODE END Init */
+  /* USER CODE BEGIN Init */
 
-	/* Configure the system clock */
-	SystemClock_Config();
+  /* USER CODE END Init */
 
-	/* USER CODE BEGIN SysInit */
+  /* Configure the system clock */
+  SystemClock_Config();
 
-	/* USER CODE END SysInit */
+  /* USER CODE BEGIN SysInit */
 
-	/* Initialize all configured peripherals */
-	MX_GPIO_Init();
-	MX_DMA_Init();
-	MX_TIM3_Init();
-	MX_TIM5_Init();
-	MX_TIM8_Init();
-	MX_USB_PCD_Init();
-	/* USER CODE BEGIN 2 */
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_TIM3_Init();
+  MX_TIM5_Init();
+  MX_TIM8_Init();
+  MX_USB_DEVICE_Init();
+  /* USER CODE BEGIN 2 */
 	LEDStrip_Manager_Init();
-	/* USER CODE END 2 */
+  /* USER CODE END 2 */
 
-	/* Infinite loop */
-	/* USER CODE BEGIN WHILE */
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
 
-	for (int led = SK6812_NUM_LEDS-1; led >= 0; led--) {
-
-		for (int strip = 0; strip < LEDSTRIP_COUNT; strip++) {
-			
-			SK6812_HandleTypeDef* strip_handle = LEDStrip_Manager_Get_Strip_Handle(strip);
-			SK6812_SetColour(strip_handle, led, 255, 255, 255);
-			SK6812_Update(strip_handle);
-
-		}
-
-		HAL_Delay(150);
-		
-	}
-
-	while (1) {
-
-		HAL_Delay(100);
-
-		// for (int strip = 0; strip < LEDSTRIP_COUNT; strip++) {
-
-		// 	SK6812_HandleTypeDef* strip_handle = LEDStrip_Manager_Get_Strip_Handle(strip);
-
-		// 	for (int led = 0; led < SK6812_NUM_LEDS; led++) {
-
-		// 		SK6812_SetColour(strip_handle, led, 255, 255, 255);
-		// 		SK6812_Update(strip_handle);
-		// 		HAL_Delay(10);
-		// 	}
-
-		// 	HAL_Delay(5000);
-
-		// 	for (int led = 0; led < SK6812_NUM_LEDS; led++) {
-
-		// 		SK6812_SetColour(strip_handle, led, 0, 0, 0);
-		// 		SK6812_Update(strip_handle);
-		// 		HAL_Delay(10);
-		// 	}
-
-		// }
-
-	}
+    /* USER CODE BEGIN 3 */
+  }
   /* USER CODE END 3 */
 }
 
@@ -430,37 +393,6 @@ static void MX_TIM8_Init(void)
 
   /* USER CODE END TIM8_Init 2 */
   HAL_TIM_MspPostInit(&htim8);
-
-}
-
-/**
-  * @brief USB Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USB_PCD_Init(void)
-{
-
-  /* USER CODE BEGIN USB_Init 0 */
-
-  /* USER CODE END USB_Init 0 */
-
-  /* USER CODE BEGIN USB_Init 1 */
-
-  /* USER CODE END USB_Init 1 */
-  hpcd_USB_FS.Instance = USB;
-  hpcd_USB_FS.Init.dev_endpoints = 8;
-  hpcd_USB_FS.Init.speed = PCD_SPEED_FULL;
-  hpcd_USB_FS.Init.low_power_enable = DISABLE;
-  hpcd_USB_FS.Init.lpm_enable = DISABLE;
-  hpcd_USB_FS.Init.battery_charging_enable = DISABLE;
-  if (HAL_PCD_Init(&hpcd_USB_FS) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USB_Init 2 */
-
-  /* USER CODE END USB_Init 2 */
 
 }
 
