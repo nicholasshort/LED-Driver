@@ -29,3 +29,67 @@ SK6812_HandleTypeDef* LEDStrip_Manager_Get_Strip_Handle(LEDStrip_id id) {
 
 }
 
+/**
+ * @brief HAL Timer PWM Pulse Finished Callback
+ * @param htim Timer handle
+ *
+ * This callback is invoked by the HAL when a timer PWM DMA transfer completes.
+ * It routes the completion event to the appropriate LED strip driver based on
+ * which timer and channel triggered the callback.
+ *
+ * Timer/Channel to Strip Mapping:
+ * - TIM3 CH1 → LEDSTRIP_4
+ * - TIM3 CH3 → LEDSTRIP_2
+ * - TIM3 CH4 → LEDSTRIP_1
+ * - TIM5 CH1 → LEDSTRIP_8
+ * - TIM5 CH2 → LEDSTRIP_7
+ * - TIM5 CH3 → LEDSTRIP_6
+ * - TIM5 CH4 → LEDSTRIP_5
+ * - TIM8 CH1 → LEDSTRIP_3
+ */
+void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
+
+	if (htim == &htim3) {
+		switch (htim->Channel) {
+			case HAL_TIM_ACTIVE_CHANNEL_1:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_4));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_3:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_2));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_4:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_1));
+				break;
+			default:
+				break;
+		}
+	}
+	else if (htim == &htim5) {
+		switch (htim->Channel) {
+			case HAL_TIM_ACTIVE_CHANNEL_1:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_8));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_2:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_7));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_3:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_6));
+				break;
+			case HAL_TIM_ACTIVE_CHANNEL_4:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_5));
+				break;
+			default:
+				break;
+		}
+	}
+	else if (htim == &htim8) {
+		switch (htim->Channel) {
+			case HAL_TIM_ACTIVE_CHANNEL_1:
+				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_3));
+				break;
+			default:
+				break;
+		}
+	}
+
+}

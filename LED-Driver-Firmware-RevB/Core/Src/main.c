@@ -22,7 +22,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "usb_protocol.h"
+#include "LEDStrip_Manager.h"
+#include "SK6812-LEDStrip.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -70,52 +72,7 @@ static void MX_TIM8_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 
-	if (htim == &htim3) {
-		switch (htim->Channel) {
-			case HAL_TIM_ACTIVE_CHANNEL_1:
-				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_4));
-				break;
-			case HAL_TIM_ACTIVE_CHANNEL_3:
-				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_2));
-				break;
-			case HAL_TIM_ACTIVE_CHANNEL_4:
-				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_1));
-				break;
-			default:
-				break;
-		}
-	}
-	else if (htim == &htim5) {
-		switch (htim->Channel) {
-			case HAL_TIM_ACTIVE_CHANNEL_1:
-				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_8));
-				break;
-			case HAL_TIM_ACTIVE_CHANNEL_2:
-				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_7));
-				break;
-			case HAL_TIM_ACTIVE_CHANNEL_3:
-				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_6));
-				break;
-			case HAL_TIM_ACTIVE_CHANNEL_4:
-				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_5));
-				break;
-			default:
-				break;
-		}
-	}
-	else if (htim == &htim8) {
-		switch (htim->Channel) {
-			case HAL_TIM_ACTIVE_CHANNEL_1:
-				SK6812_DMACompleteCallback(LEDStrip_Manager_Get_Strip_Handle(LEDSTRIP_3));
-				break;
-			default:
-				break;
-		}
-	}
-
-}
 /* USER CODE END 0 */
 
 /**
@@ -154,6 +111,9 @@ int main(void)
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
 	LEDStrip_Manager_Init();
+
+	// Initialize USB protocol parser
+	protocol_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -163,6 +123,60 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+    // Check if a new LED frame is ready from USB
+    if (protocol_new_frame_ready())
+    {
+        // Get pointer to active frame buffer
+        const uint8_t *frame = protocol_get_active_frame();
+
+        // Frame layout: 8 strips * 120 LEDs * 3 bytes (RGB)
+        // Each strip: 360 bytes (120 LEDs * 3)
+        // Total: 2880 bytes
+        //
+        // Byte layout in frame buffer:
+        // Strip 0: frame[0..359]     - LEDs 0..119 as R,G,B triplets
+        // Strip 1: frame[360..719]   - LEDs 0..119 as R,G,B triplets
+        // ...
+        // Strip 7: frame[2520..2879] - LEDs 0..119 as R,G,B triplets
+
+        // Update all 8 LED strips
+        for (uint8_t strip = 0; strip < LEDSTRIP_COUNT; strip++)
+        {
+            SK6812_HandleTypeDef *strip_handle = LEDStrip_Manager_Get_Strip_Handle(strip);
+
+            // Calculate offset into frame buffer for this strip
+            uint16_t strip_offset = strip * LEDS_PER_STRIP * BYTES_PER_LED;
+
+            // Update each LED in this strip
+            for (uint16_t led = 0; led < LEDS_PER_STRIP; led++)
+            {
+                uint16_t led_offset = strip_offset + (led * BYTES_PER_LED);
+
+                // Extract RGB values from frame (frame format is R,G,B)
+                uint8_t r = frame[led_offset + 0];
+                uint8_t g = frame[led_offset + 1];
+                uint8_t b = frame[led_offset + 2];
+
+                // Set the color (SK6812_SetColour takes R, G, B)
+                SK6812_SetColour(strip_handle, led, r, g, b);
+            }
+        }
+
+        // Send updated data to all LED strips
+        // Note: This is blocking and will take time proportional to number of LEDs
+        for (uint8_t strip = 0; strip < LEDSTRIP_COUNT; strip++)
+        {
+            SK6812_HandleTypeDef *strip_handle = LEDStrip_Manager_Get_Strip_Handle(strip);
+            SK6812_Update(strip_handle);
+        }
+
+        // Acknowledge that we've processed this frame
+        protocol_ack_frame();
+    }
+
+    // Small delay to prevent tight spinning (optional)
+    HAL_Delay(1);
   }
   /* USER CODE END 3 */
 }
