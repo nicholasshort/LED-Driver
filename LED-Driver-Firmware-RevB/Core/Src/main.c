@@ -160,31 +160,45 @@ int main(void)
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 
-	
+	for (int led = SK6812_NUM_LEDS-1; led >= 0; led--) {
+
+		for (int strip = 0; strip < LEDSTRIP_COUNT; strip++) {
+			
+			SK6812_HandleTypeDef* strip_handle = LEDStrip_Manager_Get_Strip_Handle(strip);
+			SK6812_SetColour(strip_handle, led, 255, 255, 255);
+			SK6812_Update(strip_handle);
+
+		}
+
+		HAL_Delay(150);
+		
+	}
 
 	while (1) {
 
-		for (int strip = 0; strip < LEDSTRIP_COUNT; strip++) {
+		HAL_Delay(100);
 
-			SK6812_HandleTypeDef* strip_handle = LEDStrip_Manager_Get_Strip_Handle(strip);
+		// for (int strip = 0; strip < LEDSTRIP_COUNT; strip++) {
 
-			for (int led = 0; led < SK6812_NUM_LEDS; led++) {
+		// 	SK6812_HandleTypeDef* strip_handle = LEDStrip_Manager_Get_Strip_Handle(strip);
 
-				SK6812_SetColour(strip_handle, led, 255, 255, 255);
-				SK6812_Update(strip_handle);
-				HAL_Delay(10);
-			}
+		// 	for (int led = 0; led < SK6812_NUM_LEDS; led++) {
 
-			HAL_Delay(5000);
+		// 		SK6812_SetColour(strip_handle, led, 255, 255, 255);
+		// 		SK6812_Update(strip_handle);
+		// 		HAL_Delay(10);
+		// 	}
 
-			for (int led = 0; led < SK6812_NUM_LEDS; led++) {
+		// 	HAL_Delay(5000);
 
-				SK6812_SetColour(strip_handle, led, 0, 0, 0);
-				SK6812_Update(strip_handle);
-				HAL_Delay(10);
-			}
+		// 	for (int led = 0; led < SK6812_NUM_LEDS; led++) {
 
-		}
+		// 		SK6812_SetColour(strip_handle, led, 0, 0, 0);
+		// 		SK6812_Update(strip_handle);
+		// 		HAL_Delay(10);
+		// 	}
+
+		// }
 
 	}
   /* USER CODE END 3 */
