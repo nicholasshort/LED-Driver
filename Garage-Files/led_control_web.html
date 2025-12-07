@@ -221,6 +221,12 @@
     </style>
 </head>
 <body>
+    <!-- Audio that plays on successful connection -->
+    <audio id="introAudio">
+        <source src="garage_intro.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="container">
         <h1>LED Strip Controller - 8x8 Grid</h1>
 
@@ -533,6 +539,10 @@
                 document.getElementById('status').className = 'status connected';
                 document.getElementById('connectBtn').style.display = 'none';
                 document.getElementById('mainControls').style.display = 'block';
+
+                // Play intro audio on successful connection
+                const audio = document.getElementById('introAudio');
+                audio.play().catch(err => console.log('Audio playback failed:', err));
 
                 // Start auto-update at 5 FPS
                 updateInterval = setInterval(async () => {
