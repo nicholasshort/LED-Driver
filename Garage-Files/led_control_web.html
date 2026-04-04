@@ -312,6 +312,11 @@
         let startTime = Date.now();
         let updateInterval = null;
 
+        // Animation state
+        let animationActive = false;
+        let animationLedCount = 0;
+        const animationColor = { r: 255, g: 77, b: 0 };  // Orange for garage lights
+
         // Initialize segments
         for (let strip = 0; strip < NUM_STRIPS; strip++) {
             segments[strip] = [];
@@ -448,10 +453,85 @@
             }
         }
 
+        // Garage door opening animation - lights turn on one LED at a time from bottom to top
+        // Synced with the garage door audio
+        function playGarageDoorAnimation() {
+            const initialDelay = 6000; // 6 seconds before door starts opening
+            const animationDuration = 10000; // 10 seconds for door opening
+
+            // Start with all LEDs off
+            allOff();
+
+            // Activate animation mode (keeps LEDs off during delay)
+            animationActive = true;
+            animationLedCount = 0;
+
+            const animStartTime = Date.now();
+
+            const animInterval = setInterval(() => {
+                const elapsed = Date.now() - animStartTime;
+
+                // Don't start lighting LEDs until after the initial delay
+                if (elapsed < initialDelay) {
+                    animationLedCount = 0;
+                    return;
+                }
+
+                const animElapsed = elapsed - initialDelay;
+                animationLedCount = Math.min(LEDS_PER_STRIP, Math.floor((animElapsed / animationDuration) * LEDS_PER_STRIP));
+
+                // Update UI buttons as segments fill up
+                // Bottom LED is 119, top is 0. We light from bottom up.
+                // Current lit range: LED (119 - animationLedCount + 1) to LED 119
+                // Which means LED index >= (LEDS_PER_STRIP - animationLedCount) is lit
+                const lowestLitLed = LEDS_PER_STRIP - animationLedCount;
+                const lowestLitSegment = Math.floor(lowestLitLed / LEDS_PER_SEGMENT);
+
+                // Light up all segments from bottom up to current position
+                for (let seg = SEGMENTS_PER_STRIP - 1; seg >= lowestLitSegment; seg--) {
+                    for (let strip = 0; strip < NUM_STRIPS; strip++) {
+                        if (!segments[strip][seg].enabled) {
+                            segments[strip][seg].enabled = true;
+                            segments[strip][seg].color = { ...animationColor };
+                            buttons[strip][seg].style.background = rgbToHex(animationColor);
+                        }
+                    }
+                }
+
+                if (elapsed >= initialDelay + animationDuration) {
+                    clearInterval(animInterval);
+                    animationActive = false;
+                    animationLedCount = LEDS_PER_STRIP; // Fully lit
+                }
+            }, 50);
+        }
+
         // Build LED frame
         function buildFrame() {
             const payload = new Uint8Array(FRAME_BYTES);
 
+            // During animation, use LED-by-LED control
+            if (animationActive) {
+                for (let strip = 0; strip < NUM_STRIPS; strip++) {
+                    for (let led = 0; led < LEDS_PER_STRIP; led++) {
+                        const offset = (strip * LEDS_PER_STRIP + led) * BYTES_PER_LED;
+                        // LED 119 is bottom, LED 0 is top
+                        // Light up if led >= (LEDS_PER_STRIP - animationLedCount)
+                        if (led >= LEDS_PER_STRIP - animationLedCount) {
+                            payload[offset] = animationColor.r;
+                            payload[offset + 1] = animationColor.g;
+                            payload[offset + 2] = animationColor.b;
+                        } else {
+                            payload[offset] = 0;
+                            payload[offset + 1] = 0;
+                            payload[offset + 2] = 0;
+                        }
+                    }
+                }
+                return payload;
+            }
+
+            // Normal segment-based control
             for (let strip = 0; strip < NUM_STRIPS; strip++) {
                 for (let seg = 0; seg < SEGMENTS_PER_STRIP; seg++) {
                     const segment = segments[strip][seg];
@@ -540,9 +620,14 @@
                 document.getElementById('connectBtn').style.display = 'none';
                 document.getElementById('mainControls').style.display = 'block';
 
-                // Play intro audio on successful connection
+                // Play intro audio on successful connection and animate garage door opening
                 const audio = document.getElementById('introAudio');
                 audio.play().catch(err => console.log('Audio playback failed:', err));
+
+                // Animate garage door lights opening (bottom to top)
+                // Segments are displayed with seg 0 at top, seg 7 at bottom
+                // So we light up from seg 7 down to seg 0 (bottom to top visually)
+                playGarageDoorAnimation();
 
                 // Start auto-update at 5 FPS
                 updateInterval = setInterval(async () => {
