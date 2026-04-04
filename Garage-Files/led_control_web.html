@@ -466,10 +466,10 @@
             animationActive = true;
             animationLedCount = 0;
 
-            const animStartTime = Date.now();
+            const audioStartTime = Date.now();
 
             const animInterval = setInterval(() => {
-                const elapsed = Date.now() - animStartTime;
+                const elapsed = Date.now() - audioStartTime;
 
                 // Don't start lighting LEDs until after the initial delay
                 if (elapsed < initialDelay) {
@@ -498,7 +498,7 @@
                     }
                 }
 
-                if (elapsed >= initialDelay + animationDuration) {
+                if (animElapsed >= animationDuration) {
                     clearInterval(animInterval);
                     animationActive = false;
                     animationLedCount = LEDS_PER_STRIP; // Fully lit
@@ -629,13 +629,13 @@
                 // So we light up from seg 7 down to seg 0 (bottom to top visually)
                 playGarageDoorAnimation();
 
-                // Start auto-update at 5 FPS
+                // Start auto-update at 10 FPS
                 updateInterval = setInterval(async () => {
                     await sendFrame();
-                    if (frameCount % 5 === 0) {
+                    if (frameCount % 10 === 0) {
                         updateStats();
                     }
-                }, 200);
+                }, 100);
 
             } catch (error) {
                 document.getElementById('status').textContent = `Error: ${error.message}`;
