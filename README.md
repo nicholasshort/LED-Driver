@@ -1,6 +1,6 @@
 # LED Driver
 
-A USB-controlled addressable LED strip driver built to illuminate a model car display cabinet. The cabinet houses 500+ 1/43rd scale model cars across 4 vertical sections, each lit by two 120-LED strips (960 LEDs total). Any USB host can control the LEDs—in this case, a Raspberry Pi with a touchscreen running a web interface.
+A USB-controlled addressable LED strip driver built to illuminate a model car display cabinet. The cabinet houses 500+ 1/43rd scale model cars across 4 vertical sections, each lit by two 120-LED strips (960 LEDs total). Any USB host can control the LEDs. For this appication, the garage includes a Raspberry Pi with a touchscreen running a web interface to send LED colour data.
 
 <table>
   <tr>
